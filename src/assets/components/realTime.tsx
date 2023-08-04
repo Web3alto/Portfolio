@@ -1,19 +1,19 @@
-import  { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
-const RealTimeClock = () => {
-  const [time, setTime] = useState(new Date());
+const RealTimeClock: React.FC = () => {
+  const [time, setTime] = useState<Date>(new Date());
 
   useEffect(() => {
     const timerID = setInterval(() => tick(), 1000);
     return () => clearInterval(timerID);
   }, []);
 
-  const tick = () => {
+  const tick = (): void => {
     // Update the time every second
     setTime(new Date());
   };
 
-  const formatTime = (date) => {
+  const formatTime = (date: Date): string => {
     const hours = date.getHours();
     const minutes = date.getMinutes();
     const seconds = date.getSeconds();
@@ -30,8 +30,3 @@ const RealTimeClock = () => {
 };
 
 export default RealTimeClock;
-
-
-
-
-
