@@ -49,3 +49,9 @@ html.lenis {
 .lenis.lenis-stopped {
 	overflow: hidden;
 }
+
+@media screen and (max-width: 999px) {
+	.cursor {
+		display: none;
+	}
+}
