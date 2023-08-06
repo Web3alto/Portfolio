@@ -7,13 +7,18 @@
 	list-style-type: none;
 	text-decoration: none;
 	color: #000000;
+	background: #fefefe;
+}
+body,
+html {
+	overflow-x: hidden !important;
+	scroll-behavior: smooth;
 }
 header {
 	display: flex;
 	align-items: flex-start;
 	justify-content: flex-start;
 	flex-direction: column;
-	background: #fefefe;
 	width: 95vw;
 	margin: 0 auto;
 }
@@ -29,19 +34,85 @@ header h1::after {
 	content: "™";
 	position: absolute;
 	top: 10%;
-	right: -1.5%;
+	right: 0;
 	font-family: "Inter", sans-serif;
 	font-weight: 800;
 	color: #000000;
 	font-size: 3.5vw;
 }
 /* ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ */
+.slide-reveal {
+	overflow: hidden;
+	display: inline-block;
+}
+
+.slide-reveal h1 {
+	transform: translateY(100%);
+	animation: slide-reveal 1s ease forwards 0.25s;
+	margin: 0;
+}
+.slide-reveal,
+.intro .left,
+.contactt a,
+.time,
+.bottom,
+.mobile-head,
+img[alt="arrowDown"],
+img[alt="arrowRight"] {
+	overflow: hidden;
+}
+.slide-reveal h1,
+.intro .left h2,
+.contactt a h2,
+.time h2,
+.bottom h3,
+.mobile-head h3 {
+	transform: translateY(100%);
+}
+.contactt img[alt="arrowDown"] {
+	transform: translateY(125%);
+}
+.time img[alt="arrowRight"] {
+	transform: translateY(125%);
+}
+@keyframes slide-reveal {
+	to {
+		transform: translateY(0);
+	}
+}
+.approach .right h3 span {
+	opacity: 0;
+	transform: translateY(10px);
+	transition: all 0.3s ease;
+	display: inline;
+}
+
+.approach .right h3 span.reveal-line {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+.animate-on-scroll {
+	animation: fade-in 1s ease forwards;
+}
+
+@keyframes fade-in {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+/* ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ */
 .intro {
+	position: relative;
 	display: flex;
 	align-items: flex-start;
 	justify-content: space-between;
 	width: 95vw;
-	margin: -2.5vh auto 0 auto;
+	margin: -2.5vh auto 0px;
+	z-index: 10;
 }
 h2 {
 	font-size: 1.5vw;
@@ -68,9 +139,16 @@ h2 {
 	justify-content: center;
 	cursor: pointer;
 }
+.contactt a {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+}
 .intro .right .contactt img {
 	width: 0.75vw;
 	margin: 0 0 0 0.5vw;
+	cursor: pointer;
 }
 .intro .right .top {
 	width: 92.5%;
@@ -85,8 +163,7 @@ h2 {
 	justify-content: space-between;
 }
 .top .time img {
-	width: 0.7vw;
-	transform: rotate(-90deg);
+	width: 1.4vw;
 	margin: 0 0.75vw;
 }
 .intro .right .bottom {
@@ -292,7 +369,7 @@ h2 {
 	align-items: flex-end;
 	justify-content: space-between;
 }
-.contact .bottom h3 {
+.contact .bottom h4 {
 	font-family: "Inter", sans-serif;
 	font-size: 1vw;
 	font-weight: 600;
@@ -303,16 +380,7 @@ h2 {
 	font-size: 2vw;
 	font-weight: 800;
 }
-.contact .bottom h1::after {
-	content: "™";
-	position: absolute;
-	top: 10%;
-	right: -1.5%;
-	font-family: "Inter", sans-serif;
-	font-weight: 800;
-	color: #000000;
-	font-size: 0.5vw;
-}
+
 /* ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ */
 @media screen and (max-width: 999px) {
 	.intro {
@@ -394,7 +462,7 @@ h2 {
 		font-size: 3vw;
 		font-weight: 800;
 	}
-	.contact .bottom h3 {
+	.contact .bottom h4 {
 		font-size: 1.75vw;
 	}
 }
@@ -538,7 +606,7 @@ h2 {
 		margin: 0 auto;
 		padding: 10vh 0 12.5vh 0;
 	}
-	.contact .bottom h3 {
+	.contact .bottom h4 {
 		font-size: 2.5vw;
 	}
 	.contact .bottom h1 {

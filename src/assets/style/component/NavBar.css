@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap");
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	list-style-type: none;
+	text-decoration: none;
+	color: #000000;
+	background: #fefefe;
+}
+nav {
+	position: fixed;
+	z-index: 9999;
+	padding: 2vh 2.5vw 2vh 2.5vw;
+	width: 100vw;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin: 0 auto;
+	background: #fefefe;
+}
+nav .left h1 {
+	position: relative;
+	font-size: 3vw;
+	font-family: "Inter", sans-serif;
+	font-weight: 800;
+}
+nav .left h1::after {
+	content: "™";
+	position: absolute;
+	top: 0%;
+	right: -10%;
+	font-family: "Inter", sans-serif;
+	font-weight: 800;
+	color: #000000;
+	font-size: 1.5vw;
+}
+nav .right {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+}
+nav .right h2 {
+	font-size: 1.5vw;
+	font-family: "Inter", sans-serif;
+	font-weight: 500;
+}
+nav .right img {
+	width: 0.85vw;
+	margin: 0 0 0 0.75vw;
+}
+@media screen and (max-width: 999px) {
+	nav {
+		padding: 2vh 5vw 0 2.5vw;
+	}
+	nav .left h1 {
+		font-size: 8vw;
+	}
+	nav .left h1::after {
+		content: "™";
+
+		font-size: 4vw;
+	}
+	nav .right h2 {
+		font-size: 3.5vw;
+	}
+	nav .right img {
+		width: 1.7vw;
+		margin: 0 0 0 1.25vw;
+	}
+}
+@media screen and (max-width: 600px) {
+	nav {
+		width: 90vw;
+	}
+	nav .left h1 {
+		font-size: 10vw;
+	}
+	nav .right h2 {
+		font-size: 5vw;
+	}
+	nav .right img {
+		width: 2.75vw;
+		margin: -0.2vh 0 0 1.75vw;
+	}
+}

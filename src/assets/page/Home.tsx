@@ -1,42 +1,139 @@
+import { useLayoutEffect, useEffect } from "react";
 import RealTimeClock from "../components/realTime";
 import { useNavigate } from "react-router-dom";
 // ------------------------------------------------------
 import "../style/page/Home.css";
 // ------------------------------------------------------
 import arrowDown from "../img/arrow-down.png";
+import arrowRight from "../img/arrow-right.png";
 import Kongu from "../img/logo-b.png";
 import Akogare from "../img/akogare.png";
 import Nakama from "../img/nakama.png";
+import transition from "../components/transition";
 
 function Home() {
+	// ----------------------------- POP AT THE TOP OF THE VIEWPORT ---------------------------------------
+	useEffect(() => {
+		setTimeout(() => {
+			window.scrollTo(0, 0);
+		}, 0);
+	}, []);
+	// ----------------------------- ROUTER LINK ---------------------------------------
 	const navigate = useNavigate();
 
 	const handleClick = () => {
 		navigate("/kongu");
 	};
 
+	// -----------------------------  SCROLL EFFECT ---------------------------------------
+	const text =
+		"Working closely with you to understand your unique needs and goals. With an eye for detail and a commitment to excellence, we ensure that your project stand out in today's competitive landscape.";
+
+	const words = text
+		.split(" ")
+		.map((word, index) => <span key={index}>{word} </span>);
+
+	useEffect(() => {
+		const words = document.querySelectorAll(".approach .right h3 span");
+
+		if (!words.length) {
+			console.log("Words not found");
+			return;
+		}
+
+		const handleScrollAnimation = (
+			entries: IntersectionObserverEntry[],
+			observer: IntersectionObserver
+		) => {
+			entries.forEach((entry) => {
+				if (entry.isIntersecting) {
+					entry.target.classList.add("reveal-line");
+					observer.unobserve(entry.target); // Stop observing the word once it's revealed
+				}
+			});
+		};
+
+		const options = {
+			root: null,
+			rootMargin: "0px",
+			threshold: 0.5,
+		};
+
+		const observer = new IntersectionObserver(
+			handleScrollAnimation,
+			options
+		);
+
+		words.forEach((word) => {
+			observer.observe(word);
+		});
+
+		return () => {
+			words.forEach((word) => {
+				observer.unobserve(word);
+			});
+		};
+	}, []);
+
+	// ----------------------------- HOME PAGE ANIMATION ---------------------------------------
+
+	useLayoutEffect(() => {
+		const animateElements = [
+			{ selector: ".intro .left h2", delay: 300 },
+			{ selector: ".contactt a h2", delay: 600 },
+			{ selector: ".contactt a img", delay: 600 },
+			{ selector: ".time h2", delay: 900 },
+			{ selector: ".time img", delay: 900 },
+			{ selector: ".time .real-time-clock h2", delay: 900 },
+			{ selector: ".bottom h3", delay: 1200 },
+			{ selector: ".mobile-head h3", delay: 1200 },
+		];
+
+		const timers = animateElements.map((item) => {
+			return setTimeout(() => {
+				const element = document.querySelector(
+					item.selector
+				) as HTMLElement;
+				console.log(item.selector, element); // add this line to debug
+				if (element) {
+					element.style.animation =
+						"slide-reveal .8s ease forwards .5s";
+				}
+			}, item.delay);
+		});
+
+		return () => timers.forEach((timer) => clearTimeout(timer));
+	}, []);
+
 	return (
 		<>
 			<header>
-				<h1>ALTO</h1>
+				<div className="slide-reveal">
+					<h1>ALTO</h1>
+				</div>
 			</header>
 			<section className="intro">
-				<div className="left">
+				<div className="slide-reveal-h2 left">
 					<h2>Frontend Engineer</h2>
 				</div>
 				<div className="right">
 					<div className="top">
-						<div className="contactt">
-							<h2>Contact</h2>
-							<img src={arrowDown} alt="arrowDown" />
+						<div className="slide-reveal-a contactt">
+							<a href="#contact">
+								<h2>Contact</h2>
+								<img src={arrowDown} alt="arrowDown" />
+							</a>
 						</div>
-						<div className="time">
+						<div className="slide-reveal-time time">
 							<h2>Local Time</h2>
-							<img src={arrowDown} alt="arrowDown" />
-							<RealTimeClock />
+							<img src={arrowRight} alt="arrowRight" />
+							<div className="real-time-clock">
+								{" "}
+								<RealTimeClock />
+							</div>
 						</div>
 					</div>
-					<div className="bottom">
+					<div className="slide-reveal-h3 bottom">
 						<h3>
 							Crafting exceptional digital products, brands, and
 							experiences is our passion and expertise, delivering
@@ -77,12 +174,7 @@ function Home() {
 					<h2>Process</h2>
 				</div>
 				<div className="right">
-					<h3>
-						Working closely with you to understand your unique needs
-						and goals. With an eye for detail and a commitment to
-						excellence, we ensure that your project stand out in
-						today's competitive landscape.
-					</h3>
+					<h3>{words}</h3>
 				</div>
 			</section>
 			<section className="capabilities">
@@ -99,7 +191,7 @@ function Home() {
 					</h3>
 				</div>
 			</section>
-			<section className="contact">
+			<section className="contact" id="contact">
 				<div className="top">
 					<div className="left">
 						<h2>Contact</h2>
@@ -130,11 +222,13 @@ function Home() {
 					</div>
 				</div>
 				<div className="mid">
-					<h1>LET'S CONNECT</h1>
+					<a href="mailto:web3alto@gmail.com">
+						<h1>LET'S CONNECT</h1>
+					</a>
 				</div>
 				<div className="bottom">
 					<div className="left">
-						<h3>©All Rights Reserved Altoweb3</h3>
+						<h4>©All Rights Reserved Altoweb3</h4>
 					</div>
 					<div className="right">
 						<h1>ALTO</h1>
@@ -145,4 +239,4 @@ function Home() {
 	);
 }
 
-export default Home;
+export default transition(Home);

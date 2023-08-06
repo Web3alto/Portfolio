@@ -10,4 +10,42 @@ body,
 html {
 	overflow-x: hidden;
 	scroll-behavior: smooth;
+	cursor: none;
+}
+.cursor {
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	background-color: white;
+	position: fixed;
+	pointer-events: none;
+	z-index: 99999;
+	mix-blend-mode: difference;
+}
+::selection {
+	background: #000000; /* background color for the selected text */
+	color: white; /* text color for the selected text */
+}
+::-moz-selection {
+	background: #000000;
+	color: white;
+}
+::-webkit-selection {
+	background: #000000;
+	color: white;
+}
+.lenis.lenis-smooth {
+	scroll-behavior: auto;
+}
+
+html.lenis {
+	height: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+	overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+	overflow: hidden;
 }
