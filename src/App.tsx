@@ -6,6 +6,8 @@ import { AnimatePresence } from "framer-motion";
 import Lenis from "@studio-freight/lenis";
 import Home from "./assets/page/Home";
 import Kongu from "./assets/page/Kongu";
+import Akogare from "./assets/page/Akogare";
+import Nakama from "./assets/page/Nakama";
 
 function App() {
 	const location = useLocation();
@@ -70,6 +72,8 @@ function App() {
 				<Routes location={location} key={location.pathname}>
 					<Route index element={<Home />} />
 					<Route path="/kongu" element={<Kongu />} />
+					<Route path="/akogare" element={<Akogare />} />
+					<Route path="/nakama" element={<Nakama />} />
 				</Routes>
 			</AnimatePresence>
 		</>

@@ -7,80 +7,80 @@
 	text-decoration: none;
 	list-style-type: none;
 }
-.kongu {
+.nakama {
 	width: 60vw;
 	margin: 0 auto;
 	padding: 15vh 0 0 0;
 }
-.kongu h1 {
+.nakama h1 {
 	position: relative;
 	font-size: 2.5vw;
 	font-family: "Inter", sans-serif;
 	font-weight: 800;
 }
-.kongu h1::after {
+.nakama h1::after {
 	content: "";
 	position: absolute;
 	top: 50%;
-	left: 22.5%;
+	left: 21.5%;
 	width: 5vw;
 	height: 1px;
 	background: #000000;
 }
-.kongu p {
+.nakama p {
 	font-size: 1.4vw;
 	font-family: "Inter", sans-serif;
 	font-weight: 500;
 	padding: 3.5vh 0 4.5vh 0;
 	color: #0000007c;
 }
-.kongu .about p {
+.nakama .about p {
 	font-size: 1.4vw;
 	font-family: "Inter", sans-serif;
 	font-weight: 500;
 	padding: 3.5vh 0 4.5vh 0;
 	color: #0000007c;
 }
-.kongu .about {
+.nakama .about {
 	border-top: 1px solid #000000;
 	padding: 5vh 0 5vh 0;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 }
-.kongu .about p {
+.nakama .about p {
 	font-size: 1.15vw;
 	font-family: "Inter", sans-serif;
 	font-weight: 500;
 	color: #0000007c;
 }
-.kongu .client {
+.nakama .client {
 	display: flex;
 	align-items: flex-start;
 	justify-content: flex-start;
 	flex-direction: column;
 }
-.kongu .client .title,
-.kongu .role .title,
-.kongu .date .title {
+.nakama .client .title,
+.nakama .role .title,
+.nakama .date .title {
 	display: flex;
 	align-items: center;
 	justify-content: flex-start;
 }
-.kongu .client .title,
-.kongu .role .title,
-.kongu .date .title h2 {
+.nakama .client .title,
+.nakama .role .title,
+.nakama .date .title h2 {
 	font-size: 1.2vw;
 	font-family: "Inter", sans-serif;
 	font-weight: 500;
 }
-.kongu .client .title img,
-.kongu .role .title img,
-.kongu .date .title img {
+.nakama .client .title img,
+.nakama .role .title img,
+.nakama .date .title img {
 	width: 0.7vw;
 	margin: 0 0 0 0.5vw;
 }
-.kongu .about button {
+.nakama .about button {
 	padding: 0.75vw 2.5vw;
 	border: 1px solid black;
 	outline: none;
@@ -91,10 +91,10 @@
 	margin-bottom: 5vh;
 	cursor: none;
 }
-.kongu .about button:hover {
+.nakama .about button:hover {
 	transform: scale(1.05);
 }
-.kongu .bg {
+.nakama .bg {
 	width: 100%;
 	height: 65vh;
 	display: flex;
@@ -102,21 +102,21 @@
 	justify-content: center;
 	background: none;
 }
-.kongu .bg video {
+.nakama .bg video {
 	width: 100%;
 }
-.kongu .challenge {
+.nakama .challenge {
 	width: 60vw;
 	margin: 0 auto;
 	padding: 10vh 0 0 0;
 }
-.kongu .challenge h2 {
+.nakama .challenge h2 {
 	position: relative;
 	font-size: 2vw;
 	font-family: "Inter", sans-serif;
 	font-weight: 500;
 }
-.kongu .challenge h2::after {
+.nakama .challenge h2::after {
 	content: "";
 	position: absolute;
 	top: 50%;
@@ -125,35 +125,35 @@
 	height: 1px;
 	background: #000000;
 }
-.kongu .challenge img {
+.nakama .challenge img {
 	padding: 5vh 0;
 	width: 100%;
 }
-.kongu .challenge video {
+.nakama .challenge video {
 	width: 100%;
 	margin: 5vh 0 15vh 0;
 }
 @media screen and (max-width: 999px) {
-	.kongu {
+	.nakama {
 		width: 80vw;
 	}
-	.kongu h1 {
+	.nakama h1 {
 		font-size: 5vw;
 	}
-	.kongu h1::after {
+	.nakama h1::after {
 		content: "";
-		left: 35.5%;
+		left: 32.5%;
 		width: 10vw;
 	}
-	.kongu p {
+	.nakama p {
 		font-size: 3vw;
 		padding: 2vh 0 4.5vh 0;
 	}
-	.kongu .about p {
+	.nakama .about p {
 		font-size: 3vw;
 		padding: 2vh 0 4.5vh 0;
 	}
-	.kongu .about {
+	.nakama .about {
 		border-top: 1px solid #000000;
 		padding: 5vh 0 5vh 0;
 		display: flex;
@@ -161,23 +161,23 @@
 		justify-content: space-between;
 		flex-direction: column;
 	}
-	.kongu .about h2 {
+	.nakama .about h2 {
 		font-size: 3.5vw;
 	}
-	.kongu .client .title,
-	.kongu .role .title,
-	.kongu .date .title h2 {
+	.nakama .client .title,
+	.nakama .role .title,
+	.nakama .date .title h2 {
 		font-size: 3.5vw;
 		font-family: "Inter", sans-serif;
 		font-weight: 400;
 	}
-	.kongu .client .title img,
-	.kongu .role .title img,
-	.kongu .date .title img {
+	.nakama .client .title img,
+	.nakama .role .title img,
+	.nakama .date .title img {
 		width: 2vw;
 		margin: 0 0 0 2vw;
 	}
-	.kongu .about button {
+	.nakama .about button {
 		padding: 1.5vw 7.5vw;
 		border: 1px solid black;
 		outline: none;
@@ -188,83 +188,79 @@
 		margin-bottom: 2.5vh;
 		cursor: none;
 	}
-	.kongu .bg {
+	.nakama .bg {
 		width: 100%;
 		height: 30vh;
 		display: flex;
 		align-items: center;
 		justify-content: center;
 	}
-	.kongu .challenge {
+	.nakama .challenge {
 		width: 80vw;
 		padding: 5vh 0 0 0;
 	}
-	.kongu .challenge h2 {
+	.nakama .challenge h2 {
 		font-size: 3.5vw;
 	}
-	.kongu .challenge h2::after {
+	.nakama .challenge h2::after {
 		content: "";
 		left: 32.5%;
 		width: 10vw;
 	}
-	.kongu .challenge video {
+	.nakama .challenge video {
 		width: 100%;
 		margin: 0 0 15vh 0;
-	}
-	.kongu .challenge img {
-		padding: 0 0 10vh 0;
-		width: 100%;
 	}
 }
 
 @media screen and (max-width: 600px) {
-	.kongu {
+	.nakama {
 		padding: 20vh 0 0 0;
 	}
-	.kongu h1 {
+	.nakama h1 {
 		font-size: 7.5vw;
 		margin: 0 0 2vh 0;
 	}
-	.kongu h1::after {
+	.nakama h1::after {
 		content: "";
-		left: 50.5%;
+		left: 47.5%;
 		width: 10vw;
 	}
-	.kongu p {
+	.nakama p {
 		font-size: 4.5vw;
 		padding: 2vh 0 4.5vh 0;
 	}
-	.kongu .about p {
+	.nakama .about p {
 		font-size: 4.5vw;
 		padding: 2vh 0 4.5vh 0;
 	}
-	.kongu .about h2 {
+	.nakama .about h2 {
 		font-size: 4.5vw;
 	}
-	.kongu h2 {
+	.nakama h2 {
 		font-size: 4.5vw;
 	}
-	.kongu .client .title,
-	.kongu .role .title,
-	.kongu .date .title h2 {
+	.nakama .client .title,
+	.nakama .role .title,
+	.nakama .date .title h2 {
 		font-size: 4.5vw;
 	}
-	.kongu .client .title img,
-	.kongu .role .title img,
-	.kongu .date .title img {
+	.nakama .client .title img,
+	.nakama .role .title img,
+	.nakama .date .title img {
 		width: 2.5vw;
 		margin: 0 0 0.25vh 2vw;
 	}
-	.kongu .about button {
+	.nakama .about button {
 		padding: 2vw 15vw;
 		font-size: 4.5vw;
 		margin-bottom: 2.5vh;
 	}
-	.kongu .challenge h2 {
+	.nakama .challenge h2 {
 		font-size: 4.5vw;
 		margin: 0 0 2vh 0;
 	}
-	.kongu .challenge h2::after {
+	.nakama .challenge h2::after {
 		content: "";
 		left: 41.5%;
 		width: 10vw;

@@ -1,13 +1,13 @@
 import { useEffect } from "react";
 // ------------------------------------------------------
-import "../style/page/Kongu.css";
+import "../style/page/Akogare.css";
 // ------------------------------------------------------
 import transition from "../components/transition";
 import NavBar from "../components/navBar";
 // ------------------------------------------------------
 import arrowDown from "../img/arrow-down.png";
-import konguBgVid from "../video/BgVid.mp4";
-import treehouseKongu from "../video/Treehouse.mp4";
+import akogareBgVid from "../video/_AKGR_Website.mp4";
+import akogareGallery from "../img/Akogare_Gallery.png";
 
 function Kongu() {
 	useEffect(() => {
@@ -17,13 +17,12 @@ function Kongu() {
 	return (
 		<>
 			<NavBar />
-			<section className="kongu">
-				<h1>KONGU</h1>
+			<section className="akogare">
+				<h1>AKOGARE</h1>
 				<p>
-					350 unique art pieces which grant you an invitation to The
-					Treehouse, an exclusively vetted community of individuals
-					who collectively stand by the equality principle of
-					#WeAllEat.
+					Akogare is a unique take on Web3 that combines art,
+					community and storytelling to create a new genre of media
+					and
 				</p>
 
 				<div className="about">
@@ -33,7 +32,7 @@ function Kongu() {
 							<img src={arrowDown} alt="arrowDown" />
 						</div>
 
-						<p>Kongu</p>
+						<p>Akogare</p>
 					</div>
 					<div className="role">
 						<div className="title">
@@ -41,7 +40,7 @@ function Kongu() {
 							<img src={arrowDown} alt="arrowDown" />
 						</div>
 
-						<p>Design and Developement</p>
+						<p>Development & PFP generator Engineering</p>
 					</div>
 					<div className="date">
 						<div className="title">
@@ -49,16 +48,16 @@ function Kongu() {
 							<img src={arrowDown} alt="arrowDown" />
 						</div>
 
-						<p>Dec 2022 - March 2023</p>
+						<p>Apr 2023 - Present</p>
 					</div>
-					<a href="https://kongu.io/" target="blank_">
-						<button>Launch Site</button>
+					<a href="" target="blank_">
+						<button>Coming Soon</button>
 					</a>
 				</div>
 
 				<div className="bg">
 					<video
-						src={konguBgVid}
+						src={akogareBgVid}
 						autoPlay
 						muted
 						loop
@@ -74,13 +73,7 @@ function Kongu() {
 						relevance and credibility for enthusiasts and investors
 						alike.
 					</p>
-					<video
-						src={treehouseKongu}
-						autoPlay
-						muted
-						loop
-						playsInline
-					></video>
+					<img src={akogareGallery} alt="akogareGallery" />
 				</section>
 			</section>
 		</>

@@ -21,59 +21,94 @@ function Home() {
 	// ----------------------------- ROUTER LINK ---------------------------------------
 	const navigate = useNavigate();
 
-	const handleClick = () => {
+	const goToKongu = () => {
 		navigate("/kongu");
 	};
+	const goToAkogare = () => {
+		navigate("/akogare");
+	};
+	const goToNakama = () => {
+		navigate("/nakama");
+	};
 
-	// -----------------------------  SCROLL EFFECT ---------------------------------------
-	const text =
+	// ----------------------------- APPROACH ANIMATION ---------------------------------------
+	const textApproach =
 		"Working closely with you to understand your unique needs and goals. With an eye for detail and a commitment to excellence, we ensure that your project stand out in today's competitive landscape.";
 
-	const words = text
-		.split(" ")
-		.map((word, index) => <span key={index}>{word} </span>);
+	const wordsApproach = textApproach.split(" ").map((word, wordIndex) => (
+		<span key={wordIndex} className="word">
+			{word}&nbsp;
+		</span>
+	));
 
 	useEffect(() => {
-		const words = document.querySelectorAll(".approach .right h3 span");
-
-		if (!words.length) {
-			console.log("Words not found");
-			return;
-		}
-
-		const handleScrollAnimation = (
-			entries: IntersectionObserverEntry[],
-			observer: IntersectionObserver
-		) => {
-			entries.forEach((entry) => {
-				if (entry.isIntersecting) {
-					entry.target.classList.add("reveal-line");
-					observer.unobserve(entry.target); // Stop observing the word once it's revealed
-				}
-			});
-		};
-
-		const options = {
-			root: null,
-			rootMargin: "0px",
-			threshold: 0.5,
-		};
-
 		const observer = new IntersectionObserver(
-			handleScrollAnimation,
-			options
+			(entries) => {
+				entries.forEach((entry) => {
+					if (entry.isIntersecting) {
+						entry.target.classList.add("reveal-word");
+					}
+				});
+			},
+			{
+				root: null,
+				rootMargin: "0px",
+				threshold: 0.5, // Adjust as needed
+			}
 		);
 
-		words.forEach((word) => {
+		document.querySelectorAll(".word").forEach((word) => {
 			observer.observe(word);
 		});
 
-		return () => {
-			words.forEach((word) => {
-				observer.unobserve(word);
-			});
-		};
+		return () => observer.disconnect();
 	}, []);
+
+	// ----------------------------- CAPABILITIES ANIMATION ---------------------------------------
+	const lines = [
+		"Web development",
+		"User experience",
+		"Interface design",
+		"Blockchain integration",
+		"Performance optimization",
+	];
+
+	const content = lines.map((line, lineIndex) => (
+		<div key={lineIndex}>
+			{line.split(" ").map((word, wordIndex) => (
+				<span key={`${lineIndex}-${wordIndex}`} className="word">
+					{word}&nbsp;
+				</span>
+			))}
+			<br />
+		</div>
+	));
+
+	useEffect(() => {
+		const observer = new IntersectionObserver(
+			(entries) => {
+				entries.forEach((entry) => {
+					if (entry.isIntersecting) {
+						entry.target.classList.add("visible");
+					}
+				});
+			},
+			{
+				rootMargin: "0px",
+				threshold: 0.1,
+			}
+		);
+
+		document
+			.querySelectorAll(".capabilities .right h3 .word")
+			.forEach((word) => {
+				observer.observe(word);
+			});
+
+		return () => observer.disconnect();
+	}, []);
+
+	// ----------------------------- TYPEWRITER ANIMATION ---------------------------------------
 
 	// ----------------------------- HOME PAGE ANIMATION ---------------------------------------
 
@@ -94,7 +129,6 @@ function Home() {
 				const element = document.querySelector(
 					item.selector
 				) as HTMLElement;
-				console.log(item.selector, element); // add this line to debug
 				if (element) {
 					element.style.animation =
 						"slide-reveal .8s ease forwards .5s";
@@ -155,16 +189,24 @@ function Home() {
 					<img src={arrowDown} alt="arrowDown" />
 				</div>
 				<div className="card-container">
-					<div className="card" onClick={handleClick}>
+					<div className="card" onClick={goToKongu}>
 						<img src={Kongu} alt="Kongu" />
 						<h3>KONGU</h3>
 					</div>
-					<div className="card">
-						<img className="akogare" src={Akogare} alt="Akogare" />
+					<div className="card" onClick={goToAkogare}>
+						<img
+							className="home-akogare"
+							src={Akogare}
+							alt="Akogare"
+						/>
 						<h3>AKOGARE</h3>
 					</div>
-					<div className="card">
-						<img className="nakama" src={Nakama} alt="Nakama" />
+					<div className="card" onClick={goToNakama}>
+						<img
+							className="home-nakama"
+							src={Nakama}
+							alt="Nakama"
+						/>
 						<h3>NAKAMA</h3>
 					</div>
 				</div>
@@ -174,21 +216,15 @@ function Home() {
 					<h2>Process</h2>
 				</div>
 				<div className="right">
-					<h3>{words}</h3>
+					<h3>{wordsApproach}</h3>
 				</div>
 			</section>
 			<section className="capabilities">
 				<div className="left">
-					<h2>Skillsets</h2>
+					<h2>Skillset</h2>
 				</div>
 				<div className="right">
-					<h3>
-						Web development <br />
-						User experience <br />
-						Interface design <br />
-						Blockchain integration <br />
-						Performance optimization
-					</h3>
+					<h3>{content}</h3>
 				</div>
 			</section>
 			<section className="contact" id="contact">

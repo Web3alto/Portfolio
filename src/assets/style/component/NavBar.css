@@ -53,7 +53,7 @@ nav .right img {
 }
 @media screen and (max-width: 999px) {
 	nav {
-		padding: 2vh 5vw 0 2.5vw;
+		padding: 2vh 5vw 2vh 2.5vw;
 	}
 	nav .left h1 {
 		font-size: 8vw;
@@ -73,7 +73,8 @@ nav .right img {
 }
 @media screen and (max-width: 600px) {
 	nav {
-		width: 90vw;
+		width: 100vw;
+		padding: 2vh 7.5vw 2vh 5vw;
 	}
 	nav .left h1 {
 		font-size: 10vw;

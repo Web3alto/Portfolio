@@ -41,70 +41,6 @@ header h1::after {
 	font-size: 3.5vw;
 }
 /* ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ */
-.slide-reveal {
-	overflow: hidden;
-	display: inline-block;
-}
-
-.slide-reveal h1 {
-	transform: translateY(100%);
-	animation: slide-reveal 1s ease forwards 0.25s;
-	margin: 0;
-}
-.slide-reveal,
-.intro .left,
-.contactt a,
-.time,
-.bottom,
-.mobile-head,
-img[alt="arrowDown"],
-img[alt="arrowRight"] {
-	overflow: hidden;
-}
-.slide-reveal h1,
-.intro .left h2,
-.contactt a h2,
-.time h2,
-.bottom h3,
-.mobile-head h3 {
-	transform: translateY(100%);
-}
-.contactt img[alt="arrowDown"] {
-	transform: translateY(125%);
-}
-.time img[alt="arrowRight"] {
-	transform: translateY(125%);
-}
-@keyframes slide-reveal {
-	to {
-		transform: translateY(0);
-	}
-}
-.approach .right h3 span {
-	opacity: 0;
-	transform: translateY(10px);
-	transition: all 0.3s ease;
-	display: inline;
-}
-
-.approach .right h3 span.reveal-line {
-	opacity: 1;
-	transform: translateY(0);
-}
-
-.animate-on-scroll {
-	animation: fade-in 1s ease forwards;
-}
-
-@keyframes fade-in {
-	from {
-		opacity: 0;
-	}
-	to {
-		opacity: 1;
-	}
-}
-/* ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ */
 .intro {
 	position: relative;
 	display: flex;
@@ -226,10 +162,10 @@ h2 {
 .card img {
 	width: 45%;
 }
-.card .akogare {
+.card .home-akogare {
 	width: 65%;
 }
-.card .nakama {
+.card .home-nakama {
 	width: 30%;
 }
 .card h3 {
@@ -380,7 +316,85 @@ h2 {
 	font-size: 2vw;
 	font-weight: 800;
 }
+/* ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ */
+.slide-reveal {
+	overflow: hidden;
+	display: inline-block;
+}
 
+.slide-reveal h1 {
+	transform: translateY(100%);
+	animation: slide-reveal 1s ease forwards 0.25s;
+	margin: 0;
+}
+.slide-reveal,
+.intro .left,
+.contactt a,
+.time,
+.bottom,
+.mobile-head,
+img[alt="arrowDown"],
+img[alt="arrowRight"] {
+	overflow: hidden;
+}
+.slide-reveal h1,
+.intro .left h2,
+.contactt a h2,
+.time h2,
+.bottom h3 {
+	transform: translateY(100%);
+}
+.mobile-head h3 {
+	transform: translateY(125%);
+}
+.contactt img[alt="arrowDown"] {
+	transform: translateY(125%);
+}
+.time img[alt="arrowRight"] {
+	transform: translateY(125%);
+}
+@keyframes slide-reveal {
+	to {
+		transform: translateY(0);
+	}
+}
+.word {
+	display: inline-block;
+	transform: translateY(100%);
+	opacity: 0;
+	transition: transform 0.3s ease, opacity 0.3s ease;
+	white-space: nowrap;
+}
+
+.word.reveal-word {
+	transform: translateY(0);
+	opacity: 1;
+}
+
+.capabilities .right h3 .word {
+	display: inline-block; /* To treat each word separately */
+	transform: translateY(100%); /* Start position */
+	opacity: 0; /* Start invisible */
+	transition: transform 0.3s ease-out, opacity 0.3s ease-out; /* Animation effect */
+}
+
+.capabilities .right h3 .word.visible {
+	transform: translateY(0); /* End position */
+	opacity: 1; /* End fully visible */
+}
+
+.animate-on-scroll {
+	animation: fade-in 1s ease forwards;
+}
+
+@keyframes fade-in {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
 /* ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ */
 @media screen and (max-width: 999px) {
 	.intro {
@@ -507,13 +521,12 @@ h2 {
 	}
 	.mobile-head {
 		width: 90vw;
-		margin: 0 auto;
+		margin: 20vh auto 0 auto;
+		padding: 5vh 0;
+		border-top: 0.25vw solid #000000;
 		display: flex;
 	}
 	.mobile-head h3 {
-		margin: 20vh 0 0 0;
-		padding: 5vh 0;
-		border-top: 1px solid #000000;
 		font-size: 7.5vw;
 		font-family: "Inter", sans-serif;
 		font-weight: 400;
@@ -612,5 +625,9 @@ h2 {
 	.contact .bottom h1 {
 		font-size: 7vw;
 		font-weight: 800;
+	}
+	.contact .mid h1 {
+		font-size: 17.5vw;
+		border-bottom: 1px solid #000000;
 	}
 }
