@@ -8,14 +8,21 @@ import Home from "./assets/page/Home";
 import Kongu from "./assets/page/Kongu";
 import Akogare from "./assets/page/Akogare";
 import Nakama from "./assets/page/Nakama";
+import Loader from "./assets/components/loader";
 
 function App() {
 	const location = useLocation();
+	const [isLoading, setIsLoading] = useState(true);
 
-	const [mousePosition, setMousePosition] = useState({
-		x: 0,
-		y: 0,
-	});
+	useEffect(() => {
+		const timer = setTimeout(() => {
+			setIsLoading(false);
+		}, 3000);
+
+		return () => clearTimeout(timer);
+	}, []);
+
+	// ----------------------------- SMOOTH SCROLL ---------------------------------------
 
 	useEffect(() => {
 		const lenis = new Lenis({
@@ -36,14 +43,28 @@ function App() {
 		};
 	}, []);
 
+	// ----------------------------- MOUSE CURSOR ---------------------------------------
+
+	const [cursorVariant, setCursorVariant] = useState("default");
+	const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
 	useEffect(() => {
 		const mouseMove = (e: MouseEvent) => {
-			requestAnimationFrame(() => {
-				setMousePosition({
-					x: e.clientX,
-					y: e.clientY,
-				});
+			setMousePosition({
+				x: e.clientX,
+				y: e.clientY,
 			});
+
+			const elements = document.querySelectorAll(".custom-hover");
+			const isHovering = Array.from(elements).some((element) =>
+				element.contains(e.target as Node)
+			);
+
+			if (isHovering) {
+				setCursorVariant("hover");
+			} else {
+				setCursorVariant("default");
+			}
 		};
 
 		window.addEventListener("mousemove", mouseMove);
@@ -57,25 +78,37 @@ function App() {
 		default: {
 			x: mousePosition.x - 8,
 			y: mousePosition.y - 8,
+			scale: 1,
+		},
+		hover: {
+			x: mousePosition.x - 8,
+			y: mousePosition.y - 8,
+			scale: 2,
 		},
 	};
 
 	return (
 		<>
-			<motion.div
-				className="cursor"
-				variants={variants}
-				animate="default"
-				transition={{ ease: "linear", duration: 0.15 }}
-			/>
-			<AnimatePresence mode="wait">
-				<Routes location={location} key={location.pathname}>
-					<Route index element={<Home />} />
-					<Route path="/kongu" element={<Kongu />} />
-					<Route path="/akogare" element={<Akogare />} />
-					<Route path="/nakama" element={<Nakama />} />
-				</Routes>
-			</AnimatePresence>
+			{isLoading ? (
+				<Loader />
+			) : (
+				<>
+					<motion.div
+						className="cursor"
+						variants={variants}
+						animate={cursorVariant}
+						transition={{ ease: "linear", duration: 0.15 }}
+					/>
+					<AnimatePresence mode="wait">
+						<Routes location={location} key={location.pathname}>
+							<Route index element={<Home />} />
+							<Route path="/kongu" element={<Kongu />} />
+							<Route path="/akogare" element={<Akogare />} />
+							<Route path="/nakama" element={<Nakama />} />
+						</Routes>
+					</AnimatePresence>
+				</>
+			)}
 		</>
 	);
 }

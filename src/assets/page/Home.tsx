@@ -110,6 +110,34 @@ function Home() {
 
 	// ----------------------------- TYPEWRITER ANIMATION ---------------------------------------
 
+	// ----------------------------- CARD ANIMATION ---------------------------------------
+
+	useEffect(() => {
+		const observer = new IntersectionObserver(
+			(entries) => {
+				entries.forEach((entry, index) => {
+					if (entry.isIntersecting) {
+						setTimeout(() => {
+							entry.target.classList.add("reveal-card");
+						}, index * 450); // 100ms delay for each card
+					}
+				});
+			},
+			{
+				root: null,
+				rootMargin: "0px",
+				threshold: 0.1,
+			}
+		);
+
+		document.querySelectorAll(".projects .card").forEach((card) => {
+			card.classList.add("slide-reveal-card"); // Initial state
+			observer.observe(card);
+		});
+
+		return () => observer.disconnect();
+	}, []);
+
 	// ----------------------------- HOME PAGE ANIMATION ---------------------------------------
 
 	useLayoutEffect(() => {
@@ -153,7 +181,7 @@ function Home() {
 				<div className="right">
 					<div className="top">
 						<div className="slide-reveal-a contactt">
-							<a href="#contact">
+							<a href="#contact" className="custom-hover">
 								<h2>Contact</h2>
 								<img src={arrowDown} alt="arrowDown" />
 							</a>
@@ -189,11 +217,11 @@ function Home() {
 					<img src={arrowDown} alt="arrowDown" />
 				</div>
 				<div className="card-container">
-					<div className="card" onClick={goToKongu}>
+					<div className="card custom-hover" onClick={goToKongu}>
 						<img src={Kongu} alt="Kongu" />
 						<h3>KONGU</h3>
 					</div>
-					<div className="card" onClick={goToAkogare}>
+					<div className="card custom-hover" onClick={goToAkogare}>
 						<img
 							className="home-akogare"
 							src={Akogare}
@@ -201,7 +229,7 @@ function Home() {
 						/>
 						<h3>AKOGARE</h3>
 					</div>
-					<div className="card" onClick={goToNakama}>
+					<div className="card custom-hover" onClick={goToNakama}>
 						<img
 							className="home-nakama"
 							src={Nakama}
@@ -213,7 +241,7 @@ function Home() {
 			</section>
 			<section className="approach">
 				<div className="left">
-					<h2>Process</h2>
+					<h2>Approach</h2>
 				</div>
 				<div className="right">
 					<h3>{wordsApproach}</h3>
@@ -234,7 +262,7 @@ function Home() {
 						<img src={arrowDown} alt="arrowDown" />
 					</div>
 					<div className="right">
-						<h5>
+						<h5 className="custom-hover">
 							<a
 								href="https://twitter.com/AltoWeb3"
 								target="blank_"
@@ -242,7 +270,7 @@ function Home() {
 								Twitter
 							</a>
 						</h5>
-						<h5>
+						<h5 className="custom-hover">
 							<a
 								href="https://github.com/Web3alto"
 								target="blank_"
@@ -250,7 +278,7 @@ function Home() {
 								Github
 							</a>
 						</h5>
-						<h5>
+						<h5 className="custom-hover">
 							<a href="" target="blank_">
 								LinkedIn
 							</a>
@@ -258,7 +286,10 @@ function Home() {
 					</div>
 				</div>
 				<div className="mid">
-					<a href="mailto:web3alto@gmail.com">
+					<a
+						href="mailto:web3alto@gmail.com"
+						className="custom-hover"
+					>
 						<h1>LET'S CONNECT</h1>
 					</a>
 				</div>

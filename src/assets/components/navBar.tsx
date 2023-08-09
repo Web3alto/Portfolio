@@ -12,9 +12,11 @@ const NavBar = () => {
 	return (
 		<nav>
 			<div className="left">
-				<h1 onClick={navigateToHome}>ALTO</h1>
+				<h1 onClick={navigateToHome} className="custom-hover">
+					ALTO
+				</h1>
 			</div>
-			<div className="right">
+			<div className="right custom-hover">
 				<h2>Contact</h2>
 				<img src={arrowDown} alt="arrowDown" />
 			</div>

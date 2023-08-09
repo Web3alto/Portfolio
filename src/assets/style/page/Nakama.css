@@ -18,15 +18,6 @@
 	font-family: "Inter", sans-serif;
 	font-weight: 800;
 }
-.nakama h1::after {
-	content: "";
-	position: absolute;
-	top: 50%;
-	left: 21.5%;
-	width: 5vw;
-	height: 1px;
-	background: #000000;
-}
 .nakama p {
 	font-size: 1.4vw;
 	font-family: "Inter", sans-serif;
@@ -34,53 +25,53 @@
 	padding: 3.5vh 0 4.5vh 0;
 	color: #0000007c;
 }
-.nakama .about p {
+.about-n p {
 	font-size: 1.4vw;
 	font-family: "Inter", sans-serif;
 	font-weight: 500;
 	padding: 3.5vh 0 4.5vh 0;
 	color: #0000007c;
 }
-.nakama .about {
+.about-n {
 	border-top: 1px solid #000000;
 	padding: 5vh 0 5vh 0;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 }
-.nakama .about p {
+.about-n p {
 	font-size: 1.15vw;
 	font-family: "Inter", sans-serif;
 	font-weight: 500;
 	color: #0000007c;
 }
-.nakama .client {
+.client-n {
 	display: flex;
 	align-items: flex-start;
 	justify-content: flex-start;
 	flex-direction: column;
 }
-.nakama .client .title,
-.nakama .role .title,
-.nakama .date .title {
+.client-n .title-n,
+.role-n .title-n,
+.date-n .title-n {
 	display: flex;
 	align-items: center;
 	justify-content: flex-start;
 }
-.nakama .client .title,
-.nakama .role .title,
-.nakama .date .title h2 {
+.client-n .title-n,
+.role-n .title-n,
+.date-n .title-n h2 {
 	font-size: 1.2vw;
 	font-family: "Inter", sans-serif;
 	font-weight: 500;
 }
-.nakama .client .title img,
-.nakama .role .title img,
-.nakama .date .title img {
+.client-n .title-n img,
+.role-n .title-n img,
+.date-n .title-n img {
 	width: 0.7vw;
 	margin: 0 0 0 0.5vw;
 }
-.nakama .about button {
+.about-n button {
 	padding: 0.75vw 2.5vw;
 	border: 1px solid black;
 	outline: none;
@@ -91,10 +82,10 @@
 	margin-bottom: 5vh;
 	cursor: none;
 }
-.nakama .about button:hover {
+.about-n button:hover {
 	transform: scale(1.05);
 }
-.nakama .bg {
+.bg-n {
 	width: 100%;
 	height: 65vh;
 	display: flex;
@@ -102,37 +93,61 @@
 	justify-content: center;
 	background: none;
 }
-.nakama .bg video {
+.bg-n img {
 	width: 100%;
 }
-.nakama .challenge {
+.challenge-n {
 	width: 60vw;
 	margin: 0 auto;
 	padding: 10vh 0 0 0;
 }
-.nakama .challenge h2 {
+.challenge-n h2 {
 	position: relative;
 	font-size: 2vw;
 	font-family: "Inter", sans-serif;
 	font-weight: 500;
 }
-.nakama .challenge h2::after {
-	content: "";
-	position: absolute;
-	top: 50%;
-	left: 25%;
-	width: 5vw;
-	height: 1px;
-	background: #000000;
+.challenge-n p {
+	font-size: 1.4vw;
+	font-family: "Inter", sans-serif;
+	font-weight: 500;
+	padding: 3.5vh 0 4.5vh 0;
+	color: #0000007c;
 }
-.nakama .challenge img {
+.challenge-n img {
 	padding: 5vh 0;
 	width: 100%;
 }
-.nakama .challenge video {
+.challenge-n video {
 	width: 100%;
 	margin: 5vh 0 15vh 0;
 }
+/* ------------------------------------------------------------------------------------------------------------------------------------- */
+.slide-reveal-container-n,
+.slide-reveal-n {
+	overflow: hidden;
+}
+
+.slide-reveal-n {
+	display: inline-block;
+}
+.nakama h1,
+.nakama p,
+.client-n .title-n,
+.client-n p,
+.role-n .title-n,
+.role-n p,
+.date-n .title-n,
+.date-n p,
+.about-n button {
+	transform: translateY(100%);
+}
+@keyframes slide-reveal-n {
+	to {
+		transform: translateY(0);
+	}
+}
+/* ------------------------------------------------------------------------------------------------------------------------------------- */
 @media screen and (max-width: 999px) {
 	.nakama {
 		width: 80vw;
@@ -140,20 +155,16 @@
 	.nakama h1 {
 		font-size: 5vw;
 	}
-	.nakama h1::after {
-		content: "";
-		left: 32.5%;
-		width: 10vw;
-	}
+
 	.nakama p {
 		font-size: 3vw;
 		padding: 2vh 0 4.5vh 0;
 	}
-	.nakama .about p {
+	.about-n p {
 		font-size: 3vw;
 		padding: 2vh 0 4.5vh 0;
 	}
-	.nakama .about {
+	.about-n {
 		border-top: 1px solid #000000;
 		padding: 5vh 0 5vh 0;
 		display: flex;
@@ -161,23 +172,23 @@
 		justify-content: space-between;
 		flex-direction: column;
 	}
-	.nakama .about h2 {
+	.about-n h2 {
 		font-size: 3.5vw;
 	}
-	.nakama .client .title,
-	.nakama .role .title,
-	.nakama .date .title h2 {
+	.client-n .title-n,
+	.role-n .title-n,
+	.date-n .title-n h2 {
 		font-size: 3.5vw;
 		font-family: "Inter", sans-serif;
 		font-weight: 400;
 	}
-	.nakama .client .title img,
-	.nakama .role .title img,
-	.nakama .date .title img {
+	.client-n .title-n img,
+	.role-n .title-n img,
+	.date-n .title-n img {
 		width: 2vw;
 		margin: 0 0 0 2vw;
 	}
-	.nakama .about button {
+	.about-n button {
 		padding: 1.5vw 7.5vw;
 		border: 1px solid black;
 		outline: none;
@@ -188,28 +199,30 @@
 		margin-bottom: 2.5vh;
 		cursor: none;
 	}
-	.nakama .bg {
+	.bg-n {
 		width: 100%;
 		height: 30vh;
 		display: flex;
 		align-items: center;
 		justify-content: center;
 	}
-	.nakama .challenge {
+	.challenge-n {
 		width: 80vw;
 		padding: 5vh 0 0 0;
 	}
-	.nakama .challenge h2 {
+	.challenge-n h2 {
 		font-size: 3.5vw;
 	}
-	.nakama .challenge h2::after {
-		content: "";
-		left: 32.5%;
-		width: 10vw;
+	.challenge-n p {
+		font-size: 3vw;
 	}
-	.nakama .challenge video {
+	.challenge-n video {
 		width: 100%;
 		margin: 0 0 15vh 0;
+	}
+	.challenge-n img {
+		padding: 0 0 10vh 0;
+		width: 100%;
 	}
 }
 
@@ -221,48 +234,41 @@
 		font-size: 7.5vw;
 		margin: 0 0 2vh 0;
 	}
-	.nakama h1::after {
-		content: "";
-		left: 47.5%;
-		width: 10vw;
-	}
 	.nakama p {
 		font-size: 4.5vw;
 		padding: 2vh 0 4.5vh 0;
 	}
-	.nakama .about p {
+	.about-n p {
 		font-size: 4.5vw;
 		padding: 2vh 0 4.5vh 0;
 	}
-	.nakama .about h2 {
+	.about-n h2 {
 		font-size: 4.5vw;
 	}
 	.nakama h2 {
 		font-size: 4.5vw;
 	}
-	.nakama .client .title,
-	.nakama .role .title,
-	.nakama .date .title h2 {
+	.client-n .title-n,
+	.role-n .title-n,
+	.date-n .title-n h2 {
 		font-size: 4.5vw;
 	}
-	.nakama .client .title img,
-	.nakama .role .title img,
-	.nakama .date .title img {
+	.client-n .title-n img,
+	.role-n .title-n img,
+	.date-n .title-n img {
 		width: 2.5vw;
 		margin: 0 0 0.25vh 2vw;
 	}
-	.nakama .about button {
+	.about-n button {
 		padding: 2vw 15vw;
 		font-size: 4.5vw;
 		margin-bottom: 2.5vh;
 	}
-	.nakama .challenge h2 {
+	.challenge-n h2 {
 		font-size: 4.5vw;
 		margin: 0 0 2vh 0;
 	}
-	.nakama .challenge h2::after {
-		content: "";
-		left: 41.5%;
-		width: 10vw;
+	.challenge-n p {
+		font-size: 4.5vw;
 	}
 }

@@ -18,15 +18,6 @@
 	font-family: "Inter", sans-serif;
 	font-weight: 800;
 }
-.kongu h1::after {
-	content: "";
-	position: absolute;
-	top: 50%;
-	left: 22.5%;
-	width: 5vw;
-	height: 1px;
-	background: #000000;
-}
 .kongu p {
 	font-size: 1.4vw;
 	font-family: "Inter", sans-serif;
@@ -105,18 +96,25 @@
 .kongu .bg video {
 	width: 100%;
 }
-.kongu .challenge {
+.challenge {
 	width: 60vw;
 	margin: 0 auto;
 	padding: 10vh 0 0 0;
 }
-.kongu .challenge h2 {
+.challenge h2 {
 	position: relative;
 	font-size: 2vw;
 	font-family: "Inter", sans-serif;
 	font-weight: 500;
 }
-.kongu .challenge h2::after {
+.challenge p {
+	margin: 5vh 0 2vh 0;
+	font-size: 1.15vw;
+	font-family: "Inter", sans-serif;
+	font-weight: 500;
+	color: #0000007c;
+}
+.challenge h2::after {
 	content: "";
 	position: absolute;
 	top: 50%;
@@ -125,25 +123,46 @@
 	height: 1px;
 	background: #000000;
 }
-.kongu .challenge img {
+.challenge img {
 	padding: 5vh 0;
 	width: 100%;
 }
-.kongu .challenge video {
+.challenge video {
 	width: 100%;
 	margin: 5vh 0 15vh 0;
 }
+/* ------------------------------------------------------------------------------------------------------------------------------------- */
+.slide-reveal-container,
+.slide-reveal {
+	overflow: hidden;
+}
+
+.slide-reveal {
+	display: inline-block;
+}
+.kongu h1,
+.kongu p,
+.client .title,
+.client p,
+.role .title,
+.role p,
+.date .title,
+.date p,
+.about button {
+	transform: translateY(100%);
+}
+@keyframes slideReveal {
+	to {
+		transform: translateY(0);
+	}
+}
+/* ------------------------------------------------------------------------------------------------------------------------------------- */
 @media screen and (max-width: 999px) {
 	.kongu {
 		width: 80vw;
 	}
 	.kongu h1 {
 		font-size: 5vw;
-	}
-	.kongu h1::after {
-		content: "";
-		left: 35.5%;
-		width: 10vw;
 	}
 	.kongu p {
 		font-size: 3vw;
@@ -224,11 +243,6 @@
 	.kongu h1 {
 		font-size: 7.5vw;
 		margin: 0 0 2vh 0;
-	}
-	.kongu h1::after {
-		content: "";
-		left: 50.5%;
-		width: 10vw;
 	}
 	.kongu p {
 		font-size: 4.5vw;

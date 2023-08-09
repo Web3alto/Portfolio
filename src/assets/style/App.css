@@ -5,12 +5,12 @@
 	list-style-type: none;
 	text-decoration: none;
 	color: #000000;
+	cursor: none !important;
 }
 body,
 html {
 	overflow-x: hidden;
 	scroll-behavior: smooth;
-	cursor: none;
 }
 .cursor {
 	width: 20px;
@@ -21,6 +21,9 @@ html {
 	pointer-events: none;
 	z-index: 99999;
 	mix-blend-mode: difference;
+}
+.cursor-scale {
+	transform: scale(3);
 }
 ::selection {
 	background: #000000; /* background color for the selected text */

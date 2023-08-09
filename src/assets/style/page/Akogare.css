@@ -18,15 +18,6 @@
 	font-family: "Inter", sans-serif;
 	font-weight: 800;
 }
-.akogare h1::after {
-	content: "";
-	position: absolute;
-	top: 50%;
-	left: 22.5%;
-	width: 5vw;
-	height: 1px;
-	background: #000000;
-}
 .akogare p {
 	font-size: 1.4vw;
 	font-family: "Inter", sans-serif;
@@ -34,53 +25,53 @@
 	padding: 3.5vh 0 4.5vh 0;
 	color: #0000007c;
 }
-.akogare .about p {
+.about-a p {
 	font-size: 1.4vw;
 	font-family: "Inter", sans-serif;
 	font-weight: 500;
 	padding: 3.5vh 0 4.5vh 0;
 	color: #0000007c;
 }
-.akogare .about {
+.about-a {
 	border-top: 1px solid #000000;
 	padding: 5vh 0 5vh 0;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 }
-.akogare .about p {
+.about-a p {
 	font-size: 1.15vw;
 	font-family: "Inter", sans-serif;
 	font-weight: 500;
 	color: #0000007c;
 }
-.akogare .client {
+.client-a {
 	display: flex;
 	align-items: flex-start;
 	justify-content: flex-start;
 	flex-direction: column;
 }
-.akogare .client .title,
-.akogare .role .title,
-.akogare .date .title {
+.client-a .title-a,
+.role-a .title-a,
+.date-a .title-a {
 	display: flex;
 	align-items: center;
 	justify-content: flex-start;
 }
-.akogare .client .title,
-.akogare .role .title,
-.akogare .date .title h2 {
+.client-a .title-a,
+.role-a .title-a,
+.date-a .title-a h2 {
 	font-size: 1.2vw;
 	font-family: "Inter", sans-serif;
 	font-weight: 500;
 }
-.akogare .client .title img,
-.akogare .role .title img,
-.akogare .date .title img {
+.client-a .title-a img,
+.role-a .title-a img,
+.date-a .title-a img {
 	width: 0.7vw;
 	margin: 0 0 0 0.5vw;
 }
-.akogare .about button {
+.about-a button {
 	padding: 0.75vw 2.5vw;
 	border: 1px solid black;
 	outline: none;
@@ -91,10 +82,10 @@
 	margin-bottom: 5vh;
 	cursor: none;
 }
-.akogare .about button:hover {
+.about-a button:hover {
 	transform: scale(1.05);
 }
-.akogare .bg {
+.bg-a {
 	width: 100%;
 	height: 65vh;
 	display: flex;
@@ -102,37 +93,61 @@
 	justify-content: center;
 	background: none;
 }
-.akogare .bg video {
+.bg-a video {
 	width: 100%;
 }
-.akogare .challenge {
+.challenge-a {
 	width: 60vw;
 	margin: 0 auto;
 	padding: 10vh 0 0 0;
 }
-.akogare .challenge h2 {
+.challenge-a h2 {
 	position: relative;
 	font-size: 2vw;
 	font-family: "Inter", sans-serif;
 	font-weight: 500;
 }
-.akogare .challenge h2::after {
-	content: "";
-	position: absolute;
-	top: 50%;
-	left: 25%;
-	width: 5vw;
-	height: 1px;
-	background: #000000;
+.challenge-a p {
+	font-size: 1.4vw;
+	font-family: "Inter", sans-serif;
+	font-weight: 500;
+	padding: 3.5vh 0 4.5vh 0;
+	color: #0000007c;
 }
-.akogare .challenge img {
+.challenge-a img {
 	padding: 5vh 0;
 	width: 100%;
 }
-.akogare .challenge video {
+.challenge-a video {
 	width: 100%;
 	margin: 5vh 0 15vh 0;
 }
+/* ------------------------------------------------------------------------------------------------------------------------------------- */
+.slide-reveal-container-a,
+.slide-reveal-a {
+	overflow: hidden;
+}
+
+.slide-reveal-a {
+	display: inline-block;
+}
+.akogare h1,
+.akogare p,
+.client-a .title-a,
+.client-a p,
+.role-a .title-a,
+.role-a p,
+.date-a .title-a,
+.date-a p,
+.about-a button {
+	transform: translateY(100%);
+}
+@keyframes slide-reveal-a {
+	to {
+		transform: translateY(0);
+	}
+}
+/* ------------------------------------------------------------------------------------------------------------------------------------- */
 @media screen and (max-width: 999px) {
 	.akogare {
 		width: 80vw;
@@ -140,20 +155,16 @@
 	.akogare h1 {
 		font-size: 5vw;
 	}
-	.akogare h1::after {
-		content: "";
-		left: 35.5%;
-		width: 10vw;
-	}
+
 	.akogare p {
 		font-size: 3vw;
 		padding: 2vh 0 4.5vh 0;
 	}
-	.akogare .about p {
+	.about-a p {
 		font-size: 3vw;
 		padding: 2vh 0 4.5vh 0;
 	}
-	.akogare .about {
+	.about-a {
 		border-top: 1px solid #000000;
 		padding: 5vh 0 5vh 0;
 		display: flex;
@@ -161,23 +172,23 @@
 		justify-content: space-between;
 		flex-direction: column;
 	}
-	.akogare .about h2 {
+	.about-a h2 {
 		font-size: 3.5vw;
 	}
-	.akogare .client .title,
-	.akogare .role .title,
-	.akogare .date .title h2 {
+	.client-a .title-a,
+	.role-a .title-a,
+	.date-a .title-a h2 {
 		font-size: 3.5vw;
 		font-family: "Inter", sans-serif;
 		font-weight: 400;
 	}
-	.akogare .client .title img,
-	.akogare .role .title img,
-	.akogare .date .title img {
+	.client-a .title-a img,
+	.role-a .title-a img,
+	.date-a .title-a img {
 		width: 2vw;
 		margin: 0 0 0 2vw;
 	}
-	.akogare .about button {
+	.about-a button {
 		padding: 1.5vw 7.5vw;
 		border: 1px solid black;
 		outline: none;
@@ -188,30 +199,28 @@
 		margin-bottom: 2.5vh;
 		cursor: none;
 	}
-	.akogare .bg {
+	.bg-a {
 		width: 100%;
 		height: 30vh;
 		display: flex;
 		align-items: center;
 		justify-content: center;
 	}
-	.akogare .challenge {
+	.challenge-a {
 		width: 80vw;
 		padding: 5vh 0 0 0;
 	}
-	.akogare .challenge h2 {
+	.challenge-a h2 {
 		font-size: 3.5vw;
 	}
-	.akogare .challenge h2::after {
-		content: "";
-		left: 32.5%;
-		width: 10vw;
+	.challenge-a p {
+		font-size: 3vw;
 	}
-	.akogare .challenge video {
+	.challenge-a video {
 		width: 100%;
 		margin: 0 0 15vh 0;
 	}
-	.akogare .challenge img {
+	.challenge-a img {
 		padding: 0 0 10vh 0;
 		width: 100%;
 	}
@@ -225,48 +234,41 @@
 		font-size: 7.5vw;
 		margin: 0 0 2vh 0;
 	}
-	.akogare h1::after {
-		content: "";
-		left: 50.5%;
-		width: 10vw;
-	}
 	.akogare p {
 		font-size: 4.5vw;
 		padding: 2vh 0 4.5vh 0;
 	}
-	.akogare .about p {
+	.about-a p {
 		font-size: 4.5vw;
 		padding: 2vh 0 4.5vh 0;
 	}
-	.akogare .about h2 {
+	.about-a h2 {
 		font-size: 4.5vw;
 	}
 	.akogare h2 {
 		font-size: 4.5vw;
 	}
-	.akogare .client .title,
-	.akogare .role .title,
-	.akogare .date .title h2 {
+	.client-a .title-a,
+	.role-a .title-a,
+	.date-a .title-a h2 {
 		font-size: 4.5vw;
 	}
-	.akogare .client .title img,
-	.akogare .role .title img,
-	.akogare .date .title img {
+	.client-a .title-a img,
+	.role-a .title-a img,
+	.date-a .title-a img {
 		width: 2.5vw;
 		margin: 0 0 0.25vh 2vw;
 	}
-	.akogare .about button {
+	.about-a button {
 		padding: 2vw 15vw;
 		font-size: 4.5vw;
 		margin-bottom: 2.5vh;
 	}
-	.akogare .challenge h2 {
+	.challenge-a h2 {
 		font-size: 4.5vw;
 		margin: 0 0 2vh 0;
 	}
-	.akogare .challenge h2::after {
-		content: "";
-		left: 41.5%;
-		width: 10vw;
+	.challenge-a p {
+		font-size: 4.5vw;
 	}
 }
