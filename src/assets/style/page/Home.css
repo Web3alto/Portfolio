@@ -157,7 +157,6 @@ h2 {
 	background-repeat: no-repeat;
 	background-size: 80px 80px;
 	margin: 0 4vw;
-	transition: 0.75s ease;
 }
 .card img {
 	width: 45%;
@@ -179,6 +178,7 @@ h2 {
 	font-weight: 500;
 }
 .card:hover {
+	transition: width 0.85s ease-in-out, background-size 0.85s ease-in-out;
 	width: 85vw;
 	cursor: pointer;
 	background-size: 100% 100%;
@@ -403,6 +403,20 @@ img[alt="arrowRight"] {
 	}
 	to {
 		opacity: 1;
+	}
+}
+
+.reveal-contact {
+	animation: reveal-contact-animation 0.8s ease forwards;
+}
+@keyframes reveal-contact-animation {
+	from {
+		opacity: 0;
+		transform: translateY(50px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
 	}
 }
 /* ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ */

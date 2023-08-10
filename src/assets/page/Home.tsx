@@ -138,7 +138,7 @@ function Home() {
 		return () => observer.disconnect();
 	}, []);
 
-	// ----------------------------- HOME PAGE ANIMATION ---------------------------------------
+	// ----------------------------- HEADER + INTRO ANIMATION ---------------------------------------
 
 	useLayoutEffect(() => {
 		const animateElements = [
@@ -165,6 +165,42 @@ function Home() {
 		});
 
 		return () => timers.forEach((timer) => clearTimeout(timer));
+	}, []);
+
+	// ----------------------------- CONTACT ANIMATION ---------------------------------------
+
+	useEffect(() => {
+		const observer = new IntersectionObserver(
+			(entries) => {
+				entries.forEach((entry) => {
+					if (entry.isIntersecting) {
+						entry.target.classList.add("reveal-contact");
+					}
+				});
+			},
+			{
+				root: null,
+				rootMargin: "0px",
+				threshold: 0.1,
+			}
+		);
+
+		const selectors = [
+			".contact .top .left",
+			".contact .right h5",
+			".contact .mid a",
+			".contact .bottom .left",
+			".contact .bottom .right",
+		];
+
+		selectors.forEach((selector) => {
+			const elements = document.querySelectorAll(selector);
+			elements.forEach((element) => {
+				observer.observe(element);
+			});
+		});
+
+		return () => observer.disconnect();
 	}, []);
 
 	return (
@@ -256,52 +292,48 @@ function Home() {
 				</div>
 			</section>
 			<section className="contact" id="contact">
-				<div className="top">
-					<div className="left">
-						<h2>Contact</h2>
-						<img src={arrowDown} alt="arrowDown" />
-					</div>
-					<div className="right">
-						<h5 className="custom-hover">
-							<a
-								href="https://twitter.com/AltoWeb3"
-								target="blank_"
-							>
-								Twitter
-							</a>
-						</h5>
-						<h5 className="custom-hover">
-							<a
-								href="https://github.com/Web3alto"
-								target="blank_"
-							>
-								Github
-							</a>
-						</h5>
-						<h5 className="custom-hover">
-							<a href="" target="blank_">
-								LinkedIn
-							</a>
-						</h5>
-					</div>
-				</div>
-				<div className="mid">
-					<a
-						href="mailto:web3alto@gmail.com"
-						className="custom-hover"
-					>
-						<h1>LET'S CONNECT</h1>
+	<div className="contact-reveal-container">
+		<div className="top">
+			<div className="left contact-reveal">
+				<h2>Contact</h2>
+				<img src={arrowDown} alt="arrowDown" />
+			</div>
+			<div className="right">
+				<h5 className="custom-hover contact-reveal">
+					<a href="https://twitter.com/AltoWeb3" target="blank_">
+						Twitter
 					</a>
-				</div>
-				<div className="bottom">
-					<div className="left">
-						<h4>©All Rights Reserved Altoweb3</h4>
-					</div>
-					<div className="right">
-						<h1>ALTO</h1>
-					</div>
-				</div>
-			</section>
+				</h5>
+				<h5 className="custom-hover contact-reveal">
+					<a href="https://github.com/Web3alto" target="blank_">
+						Github
+					</a>
+				</h5>
+				<h5 className="custom-hover contact-reveal">
+					<a href="" target="blank_">
+						LinkedIn
+					</a>
+				</h5>
+			</div>
+		</div>
+		<div className="mid">
+			<a
+				href="mailto:web3alto@gmail.com"
+				className="custom-hover contact-reveal"
+			>
+				<h1>LET'S CONNECT</h1>
+			</a>
+		</div>
+		<div className="bottom">
+			<div className="left contact-reveal">
+				<h4>©All Rights Reserved Altoweb3</h4>
+			</div>
+			<div className="right contact-reveal">
+				<h1>ALTO</h1>
+			</div>
+		</div>
+	</div>
+</section>
 		</>
 	);
 }

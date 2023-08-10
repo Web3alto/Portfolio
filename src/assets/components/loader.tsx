@@ -1,19 +1,19 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import transition from "../components/transition";
 import "../style/component/Loader.css";
 
 const Loader: React.FC = () => {
 	const navigate = useNavigate();
 	const [visible, setVisible] = useState(true);
 	const [currentWord, setCurrentWord] = useState(0);
-	const words = ["CREATE", "BUILD", "INNOVATE"];
+	// const words = ["CREATE", "BUILD", "INNOVATE"];
+	const words = ["WELCOME", "TO", "MY", "PORTFOLIO"];
 
 	useEffect(() => {
 		// Change the word every 1 second
 		const wordTimer = setInterval(() => {
 			setCurrentWord((prevWord) => (prevWord + 1) % words.length);
-		}, 1000);
+		}, 750);
 
 		// Hide the loader after 3 seconds
 		const visibleTimer = setTimeout(() => {
@@ -44,4 +44,4 @@ const Loader: React.FC = () => {
 	);
 };
 
-export default transition(Loader);
+export default Loader;

@@ -45,6 +45,25 @@ function App() {
 
 	// ----------------------------- MOUSE CURSOR ---------------------------------------
 
+	const [userInteracted, setUserInteracted] = useState(false);
+
+	useEffect(() => {
+		// Define a function that will be called on user interaction
+		const handleUserInteraction = () => {
+			setUserInteracted(true);
+		};
+
+		// Add event listeners for user interaction
+		window.addEventListener("mousemove", handleUserInteraction);
+		window.addEventListener("keydown", handleUserInteraction);
+
+		// Remove the event listeners when the component is unmounted
+		return () => {
+			window.removeEventListener("mousemove", handleUserInteraction);
+			window.removeEventListener("keydown", handleUserInteraction);
+		};
+	}, []);
+
 	const [cursorVariant, setCursorVariant] = useState("default");
 	const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
@@ -83,7 +102,7 @@ function App() {
 		hover: {
 			x: mousePosition.x - 8,
 			y: mousePosition.y - 8,
-			scale: 2,
+			scale: 2.5,
 		},
 	};
 
@@ -93,12 +112,15 @@ function App() {
 				<Loader />
 			) : (
 				<>
-					<motion.div
-						className="cursor"
-						variants={variants}
-						animate={cursorVariant}
-						transition={{ ease: "linear", duration: 0.15 }}
-					/>
+					{/* Only render the cursor if the user has interacted */}
+					{userInteracted && (
+						<motion.div
+							className="cursor"
+							variants={variants}
+							animate={cursorVariant}
+							transition={{ ease: "linear", duration: 0.2 }}
+						/>
+					)}
 					<AnimatePresence mode="wait">
 						<Routes location={location} key={location.pathname}>
 							<Route index element={<Home />} />
