@@ -1,6 +1,6 @@
 import { useLayoutEffect, useEffect } from "react";
 import RealTimeClock from "../components/realTime";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 // ------------------------------------------------------
 import "../style/page/Home.css";
 // ------------------------------------------------------
@@ -18,18 +18,6 @@ function Home() {
 			window.scrollTo(0, 0);
 		}, 0);
 	}, []);
-	// ----------------------------- ROUTER LINK ---------------------------------------
-	const navigate = useNavigate();
-
-	const goToKongu = () => {
-		navigate("/kongu");
-	};
-	const goToAkogare = () => {
-		navigate("/akogare");
-	};
-	const goToNakama = () => {
-		navigate("/nakama");
-	};
 
 	// ----------------------------- APPROACH ANIMATION ---------------------------------------
 	const textApproach =
@@ -253,26 +241,26 @@ function Home() {
 					<img src={arrowDown} alt="arrowDown" />
 				</div>
 				<div className="card-container">
-					<div className="card custom-hover" onClick={goToKongu}>
+					<Link className="card custom-hover" to={"/kongu"}>
 						<img src={Kongu} alt="Kongu" />
 						<h3>KONGU</h3>
-					</div>
-					<div className="card custom-hover" onClick={goToAkogare}>
+					</Link>
+					<Link className="card custom-hover" to={"/akogare"}>
 						<img
 							className="home-akogare"
 							src={Akogare}
 							alt="Akogare"
 						/>
 						<h3>AKOGARE</h3>
-					</div>
-					<div className="card custom-hover" onClick={goToNakama}>
+					</Link>
+					<Link className="card custom-hover" to={"/nakama"}>
 						<img
 							className="home-nakama"
 							src={Nakama}
 							alt="Nakama"
 						/>
 						<h3>NAKAMA</h3>
-					</div>
+					</Link>
 				</div>
 			</section>
 			<section className="approach">
@@ -292,48 +280,54 @@ function Home() {
 				</div>
 			</section>
 			<section className="contact" id="contact">
-	<div className="contact-reveal-container">
-		<div className="top">
-			<div className="left contact-reveal">
-				<h2>Contact</h2>
-				<img src={arrowDown} alt="arrowDown" />
-			</div>
-			<div className="right">
-				<h5 className="custom-hover contact-reveal">
-					<a href="https://twitter.com/AltoWeb3" target="blank_">
-						Twitter
-					</a>
-				</h5>
-				<h5 className="custom-hover contact-reveal">
-					<a href="https://github.com/Web3alto" target="blank_">
-						Github
-					</a>
-				</h5>
-				<h5 className="custom-hover contact-reveal">
-					<a href="" target="blank_">
-						LinkedIn
-					</a>
-				</h5>
-			</div>
-		</div>
-		<div className="mid">
-			<a
-				href="mailto:web3alto@gmail.com"
-				className="custom-hover contact-reveal"
-			>
-				<h1>LET'S CONNECT</h1>
-			</a>
-		</div>
-		<div className="bottom">
-			<div className="left contact-reveal">
-				<h4>©All Rights Reserved Altoweb3</h4>
-			</div>
-			<div className="right contact-reveal">
-				<h1>ALTO</h1>
-			</div>
-		</div>
-	</div>
-</section>
+				<div className="contact-reveal-container">
+					<div className="top">
+						<div className="left contact-reveal">
+							<h2>Contact</h2>
+							<img src={arrowDown} alt="arrowDown" />
+						</div>
+						<div className="right">
+							<h5 className="custom-hover contact-reveal">
+								<a
+									href="https://twitter.com/AltoWeb3"
+									target="blank_"
+								>
+									Twitter
+								</a>
+							</h5>
+							<h5 className="custom-hover contact-reveal">
+								<a
+									href="https://github.com/Web3alto"
+									target="blank_"
+								>
+									Github
+								</a>
+							</h5>
+							<h5 className="custom-hover contact-reveal">
+								<a href="" target="blank_">
+									LinkedIn
+								</a>
+							</h5>
+						</div>
+					</div>
+					<div className="mid">
+						<a
+							href="mailto:web3alto@gmail.com"
+							className="custom-hover contact-reveal"
+						>
+							<h1>LET'S CONNECT</h1>
+						</a>
+					</div>
+					<div className="bottom">
+						<div className="left contact-reveal">
+							<h4>©All Rights Reserved Altoweb3</h4>
+						</div>
+						<div className="right contact-reveal">
+							<h1>ALTO</h1>
+						</div>
+					</div>
+				</div>
+			</section>
 		</>
 	);
 }

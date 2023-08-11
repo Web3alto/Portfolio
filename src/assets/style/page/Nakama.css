@@ -80,7 +80,7 @@
 	font-weight: 500;
 	transition: 0.25s ease;
 	margin-bottom: 5vh;
-	cursor: none;
+	pointer-events: none;
 }
 .about-n button:hover {
 	transform: scale(1.05);
@@ -97,6 +97,7 @@
 	width: 100%;
 }
 .challenge-n {
+	overflow-y: hidden;
 	width: 60vw;
 	margin: 0 auto;
 	padding: 10vh 0 0 0;
@@ -115,6 +116,7 @@
 	color: #0000007c;
 }
 .challenge-n img {
+	opacity: 0;
 	padding: 5vh 0;
 	width: 100%;
 }
@@ -144,6 +146,60 @@
 }
 @keyframes slide-reveal-n {
 	to {
+		transform: translateY(0);
+	}
+}
+/* ------------------------------------------------------------------------------------------------------------------------------------- */
+@keyframes fadeInSlideUp {
+	0% {
+		opacity: 0;
+		transform: translateY(50px);
+	}
+	80% {
+		opacity: 0;
+		transform: translateY(50px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.bg-n img {
+	animation: fadeInSlideUp 3s ease forwards;
+}
+/* ------------------------------------------------------------------------------------------------------------------------------------- */
+@keyframes slideRevealText {
+	from {
+		transform: translateY(100%);
+		opacity: 0;
+	}
+	to {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+.challenge-reveal {
+	opacity: 0;
+	transform: translateY(100%);
+	overflow: hidden;
+}
+
+.challenge-reveal.in-view {
+	animation: slideRevealText 1s forwards;
+}
+/* ------------------------------------------------------------------------------------------------------------------------------------- */
+.img-in-view {
+	animation: fadeIn 1s forwards;
+}
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+		transform: translateY(50px);
+	}
+	100% {
+		opacity: 1;
 		transform: translateY(0);
 	}
 }

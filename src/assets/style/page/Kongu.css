@@ -97,6 +97,7 @@
 	width: 100%;
 }
 .challenge {
+	overflow-y: hidden;
 	width: 60vw;
 	margin: 0 auto;
 	padding: 10vh 0 0 0;
@@ -109,25 +110,17 @@
 }
 .challenge p {
 	margin: 5vh 0 2vh 0;
-	font-size: 1.15vw;
+	font-size: 1.4vw;
 	font-family: "Inter", sans-serif;
 	font-weight: 500;
 	color: #0000007c;
-}
-.challenge h2::after {
-	content: "";
-	position: absolute;
-	top: 50%;
-	left: 25%;
-	width: 5vw;
-	height: 1px;
-	background: #000000;
 }
 .challenge img {
 	padding: 5vh 0;
 	width: 100%;
 }
 .challenge video {
+	opacity: 0;
 	width: 100%;
 	margin: 5vh 0 15vh 0;
 }
@@ -153,6 +146,60 @@
 }
 @keyframes slideReveal {
 	to {
+		transform: translateY(0);
+	}
+}
+/* ------------------------------------------------------------------------------------------------------------------------------------- */
+@keyframes fadeInSlideUp {
+	0% {
+		opacity: 0;
+		transform: translateY(50px);
+	}
+	80% {
+		opacity: 0;
+		transform: translateY(50px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.bg video {
+	animation: fadeInSlideUp 3s ease forwards;
+}
+/* ------------------------------------------------------------------------------------------------------------------------------------- */
+@keyframes slideRevealText {
+	from {
+		transform: translateY(100%);
+		opacity: 0;
+	}
+	to {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+.challenge-reveal {
+	opacity: 0;
+	transform: translateY(100%);
+	overflow: hidden;
+}
+
+.challenge-reveal.in-view {
+	animation: slideRevealText 1s forwards;
+}
+/* ------------------------------------------------------------------------------------------------------------------------------------- */
+.img-in-view {
+	animation: fadeIn 1s forwards;
+}
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+		transform: translateY(50px);
+	}
+	100% {
+		opacity: 1;
 		transform: translateY(0);
 	}
 }
@@ -214,23 +261,21 @@
 		align-items: center;
 		justify-content: center;
 	}
-	.kongu .challenge {
+	.challenge {
 		width: 80vw;
 		padding: 5vh 0 0 0;
 	}
-	.kongu .challenge h2 {
+	.challenge h2 {
 		font-size: 3.5vw;
 	}
-	.kongu .challenge h2::after {
-		content: "";
-		left: 32.5%;
-		width: 10vw;
+	.challenge p {
+		font-size: 3vw;
 	}
-	.kongu .challenge video {
+	.challenge video {
 		width: 100%;
 		margin: 0 0 15vh 0;
 	}
-	.kongu .challenge img {
+	.challenge img {
 		padding: 0 0 10vh 0;
 		width: 100%;
 	}
@@ -274,13 +319,11 @@
 		font-size: 4.5vw;
 		margin-bottom: 2.5vh;
 	}
-	.kongu .challenge h2 {
+	.challenge h2 {
 		font-size: 4.5vw;
 		margin: 0 0 2vh 0;
 	}
-	.kongu .challenge h2::after {
-		content: "";
-		left: 41.5%;
-		width: 10vw;
+	.challenge p {
+		font-size: 4.5vw;
 	}
 }

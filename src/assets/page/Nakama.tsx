@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect } from "react";
+import { useEffect, useLayoutEffect, useRef } from "react";
 // ------------------------------------------------------
 import "../style/page/Nakama.css";
 // ------------------------------------------------------
@@ -7,9 +7,14 @@ import NavBar from "../components/navBar";
 // ------------------------------------------------------
 import arrowDown from "../img/arrow-down.png";
 import nakamaBG from "../img/NakamaBG.png";
-import treehouseKongu from "../video/Treehouse.mp4";
+import nakamaMint from "../img/NakamaMint.png";
 
 function Nakama() {
+	const disableLink = (event: { preventDefault: () => void }) => {
+		event.preventDefault();
+	};
+	// ----------------------------- FIRST PAGE ANIMATION ---------------------------------------
+
 	useLayoutEffect(() => {
 		const animateElements = [
 			{ selector: ".nakama h1", delay: 300 },
@@ -36,6 +41,73 @@ function Nakama() {
 		});
 
 		return () => timers.forEach((timer) => clearTimeout(timer));
+	}, []);
+
+	// ----------------------------- CHALLENGE TEXT ANIMATION ---------------------------------------
+
+	const challengeTitleRef = useRef(null);
+	const challengeTextRef = useRef(null);
+
+	useEffect(() => {
+		const handleScroll = (
+			entries: IntersectionObserverEntry[],
+			observer: IntersectionObserver
+		) => {
+			entries.forEach((entry) => {
+				if (entry.isIntersecting) {
+					entry.target.classList.add("in-view");
+					observer.unobserve(entry.target);
+				}
+			});
+		};
+
+		const options = {
+			threshold: 0.1,
+		};
+
+		const observer = new IntersectionObserver(handleScroll, options);
+
+		if (challengeTitleRef.current && challengeTextRef.current) {
+			observer.observe(challengeTitleRef.current);
+			observer.observe(challengeTextRef.current);
+		}
+
+		return () => {
+			observer.disconnect();
+		};
+	}, []);
+
+	// ----------------------------- CHALLENGE IMG ANIMATION ---------------------------------------
+
+	const challengeImageRef = useRef(null);
+
+	useEffect(() => {
+		const handleScroll = (
+			entries: IntersectionObserverEntry[],
+			observer: IntersectionObserver
+		) => {
+			entries.forEach((entry) => {
+				if (entry.isIntersecting) {
+					entry.target.classList.add("img-in-view");
+					observer.unobserve(entry.target);
+				}
+			});
+		};
+
+		const options = {
+			threshold: 0.35,
+		};
+
+		const observer = new IntersectionObserver(handleScroll, options);
+
+		const challengeImgRef = document.querySelector(".challenge-n img");
+		if (challengeImgRef) {
+			observer.observe(challengeImgRef);
+		}
+
+		return () => {
+			observer.disconnect();
+		};
 	}, []);
 
 	useEffect(() => {
@@ -91,11 +163,13 @@ function Nakama() {
 							<p>May 2023 - Present</p>
 						</div>
 					</div>
-					<a href="" target="blank_">
-						<button className="slide-reveal-n custom-hover">
-							Coming Soon
-						</button>
-					</a>
+					<button
+						className="slide-reveal-n custom-hover"
+						type="button"
+						onClick={disableLink}
+					>
+						Coming Soon
+					</button>
 				</div>
 
 				<div className="bg-n">
@@ -103,15 +177,21 @@ function Nakama() {
 				</div>
 			</section>
 			<section className="challenge-n">
-				<h2>The Challenge</h2>
-				<p>
+				<h2 ref={challengeTitleRef} className="challenge-reveal">
+					The Challenge
+				</h2>
+				<p ref={challengeTextRef} className="challenge-reveal">
 					The challenge with Kongu was to translate their vision into
 					a fully functional and responsive website. We aimed to
 					connect imagination to reality establishing Kongu's
 					relevance and credibility for enthusiasts and investors
 					alike.
 				</p>
-				<img src={treehouseKongu} alt="akogareGallery" />
+				<img
+					ref={challengeImageRef}
+					src={nakamaMint}
+					alt="nakamaMint"
+				/>
 			</section>
 		</>
 	);
