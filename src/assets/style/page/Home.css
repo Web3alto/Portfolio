@@ -406,18 +406,27 @@ img[alt="arrowRight"] {
 	}
 }
 /* -----------CONTACT ANIMATION-------------- */
-.reveal-contact {
-	animation: reveal-contact-animation 0.8s ease forwards;
+.hide {
+	opacity: 0;
+	transition: all 0.5s ease;
 }
-@keyframes reveal-contact-animation {
-	from {
-		opacity: 0;
-		transform: translateY(50px);
-	}
-	to {
-		opacity: 1;
-		transform: translateY(0);
-	}
+.hide-bottom {
+	opacity: 0;
+	transition: all 1s ease;
+}
+
+.hide {
+	transform: translateY(50px);
+}
+
+.hide-bottom {
+	transform: translateY(10px);
+}
+
+.slide-reveal,
+.slide-reveal-bottom {
+	opacity: 1;
+	transform: translateY(0);
 }
 /* -----------TYPEWRITER-------------- */
 

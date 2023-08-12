@@ -158,37 +158,73 @@ function Home() {
 	// ----------------------------- CONTACT ANIMATION ---------------------------------------
 
 	useEffect(() => {
-		const observer = new IntersectionObserver(
-			(entries) => {
-				entries.forEach((entry) => {
-					if (entry.isIntersecting) {
-						entry.target.classList.add("reveal-contact");
-					}
-				});
-			},
-			{
-				root: null,
-				rootMargin: "0px",
-				threshold: 0.1,
-			}
-		);
+		// Method for handling the majority of elements
+		const handleRest = () => {
+			const observer = new IntersectionObserver(
+				(entries) => {
+					entries.forEach((entry) => {
+						if (entry.isIntersecting) {
+							entry.target.classList.add("slide-reveal");
+						}
+					});
+				},
+				{
+					root: null,
+					rootMargin: "0px",
+					threshold: 0.1,
+				}
+			);
 
-		const selectors = [
-			".contact .top .left",
-			".contact .right h5",
-			".contact .mid a",
-			".contact .bottom .left",
-			".contact .bottom .right",
-		];
+			const targetsRest = [
+				document.querySelector(".contact .top .left"),
+				...document.querySelectorAll(".right h5"),
+				document.querySelector(".mid a"),
+			];
 
-		selectors.forEach((selector) => {
-			const elements = document.querySelectorAll(selector);
-			elements.forEach((element) => {
-				observer.observe(element);
+			targetsRest.forEach((target) => {
+				if (target) {
+					target.classList.add("hide");
+					observer.observe(target);
+				}
 			});
-		});
 
-		return () => observer.disconnect();
+			return () => observer.disconnect();
+		};
+
+		// Method for handling bottom elements
+		const handleBottom = () => {
+			const observer = new IntersectionObserver(
+				(entries) => {
+					entries.forEach((entry) => {
+						if (entry.isIntersecting) {
+							entry.target.classList.add("slide-reveal-bottom");
+						}
+					});
+				},
+				{
+					root: null,
+					rootMargin: "0px",
+					threshold: 0, // Different threshold for the bottom elements
+				}
+			);
+
+			const targetsBottom = [
+				document.querySelector(".bottom .left"),
+				document.querySelector(".bottom .right"),
+			];
+
+			targetsBottom.forEach((target) => {
+				if (target) {
+					target.classList.add("hide-bottom"); // Different hiding class for the bottom elements
+					observer.observe(target);
+				}
+			});
+
+			return () => observer.disconnect();
+		};
+
+		handleRest();
+		handleBottom();
 	}, []);
 
 	return (
@@ -205,7 +241,7 @@ function Home() {
 				<div className="right">
 					<div className="top">
 						<div className="slide-reveal-a contactt">
-							<a href="#contact" className="custom-hover">
+							<a className="custom-hover">
 								<h2>Contact</h2>
 								<img src={arrowDown} alt="arrowDown" />
 							</a>
@@ -304,8 +340,11 @@ function Home() {
 								</a>
 							</h5>
 							<h5 className="custom-hover contact-reveal">
-								<a href="" target="blank_">
-									LinkedIn
+								<a
+									href="https://discordapp.com/users/1001219015521345656"
+									target="blank_"
+								>
+									Discord
 								</a>
 							</h5>
 						</div>

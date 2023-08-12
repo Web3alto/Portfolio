@@ -91,10 +91,13 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	background: none;
+	background: #ece7e2;
+}
+.kongu .bg img {
+	width: 100%;
 }
 .kongu .bg video {
-	width: 100%;
+	width: 80%;
 }
 .challenge {
 	overflow-y: hidden;
@@ -273,10 +276,10 @@
 	}
 	.challenge video {
 		width: 100%;
-		margin: 0 0 15vh 0;
+		margin: 5vh 0 15vh 0;
 	}
 	.challenge img {
-		padding: 0 0 10vh 0;
+		margin: 5vh 0 15vh 0;
 		width: 100%;
 	}
 }

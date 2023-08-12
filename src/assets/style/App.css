@@ -12,6 +12,10 @@ html {
 	overflow-x: hidden;
 	scroll-behavior: smooth;
 }
+body::-webkit-scrollbar {
+	width: 0;
+}
+
 .cursor {
 	width: 20px;
 	height: 20px;

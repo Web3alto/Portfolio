@@ -1,4 +1,4 @@
-import { useEffect, useRef, useLayoutEffect } from "react";
+import { useEffect, useRef, useLayoutEffect, useState } from "react";
 // ------------------------------------------------------
 import "../style/page/Kongu.css";
 // ------------------------------------------------------
@@ -7,9 +7,28 @@ import NavBar from "../components/navBar";
 // ------------------------------------------------------
 import arrowDown from "../img/arrow-down.png";
 import konguBgVid from "../video/BgVid.mp4";
+import konguBgImg from "../img/Kongu.png";
 import treehouseKongu from "../video/Treehouse.mp4";
 
 function Kongu() {
+	const [isSmallScreen, setSmallScreen] = useState(window.innerWidth < 999);
+
+	useEffect(() => {
+		const handleResize = () => {
+			if (window.innerWidth < 999) {
+				setSmallScreen(true);
+			} else {
+				setSmallScreen(false);
+			}
+		};
+
+		window.addEventListener("resize", handleResize);
+
+		return () => {
+			window.removeEventListener("resize", handleResize);
+		};
+	}, []);
+
 	useLayoutEffect(() => {
 		const animateElements = [
 			{ selector: ".kongu h1", delay: 300 },
@@ -166,13 +185,17 @@ function Kongu() {
 				</div>
 
 				<div className="bg">
-					<video
-						src={konguBgVid}
-						autoPlay
-						muted
-						loop
-						playsInline
-					></video>
+					{isSmallScreen ? (
+						<img src={konguBgImg} alt="Kongu Background" />
+					) : (
+						<video
+							src={konguBgVid}
+							autoPlay
+							muted
+							loop
+							playsInline
+						></video>
+					)}
 				</div>
 			</section>
 			<section className="challenge">
