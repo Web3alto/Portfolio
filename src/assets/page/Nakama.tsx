@@ -123,9 +123,11 @@ function Nakama() {
 				</div>
 				<div className="slide-reveal-n">
 					<p>
-						Nakama is a unique take on Web3 that combines art,
-						community and storytelling to create a new genre of
-						media and
+						Nakama is an Education Platform Designed By Todays
+						Leaders, Tailored For Tomorrows Visionaries. Their
+						community is composed of the Web3 workforce that is
+						still concentrated on bringing value and growing the
+						Web3 community in the bear market.
 					</p>
 				</div>
 
@@ -181,11 +183,14 @@ function Nakama() {
 					The Challenge
 				</h2>
 				<p ref={challengeTextRef} className="challenge-reveal">
-					The challenge with Kongu was to translate their vision into
-					a fully functional and responsive website. We aimed to
-					connect imagination to reality establishing Kongu's
-					relevance and credibility for enthusiasts and investors
-					alike.
+					The challenge with Nakama required a precise alignment of
+					design, technology, and user experience. Initially, we
+					analyzed Nakama's mockup, focusing on optimal website
+					integration and an enhanced user experience. Creating a
+					custom VueJS website, we meticulously mirrored Nakama's
+					vision, ensuring every detail was represented. User testing
+					was essential, leading to continuous refinements for a more
+					intuitive and responsive interaction.
 				</p>
 				<img
 					ref={challengeImageRef}

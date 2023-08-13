@@ -14,19 +14,19 @@
 }
 .kongu h1 {
 	position: relative;
-	font-size: 2.5vw;
+	font-size: 3.15vw;
 	font-family: "Inter", sans-serif;
 	font-weight: 800;
 }
 .kongu p {
-	font-size: 1.4vw;
+	font-size: 1.5vw;
 	font-family: "Inter", sans-serif;
 	font-weight: 500;
 	padding: 3.5vh 0 4.5vh 0;
 	color: #0000007c;
 }
 .kongu .about p {
-	font-size: 1.4vw;
+	font-size: 1.5vw;
 	font-family: "Inter", sans-serif;
 	font-weight: 500;
 	padding: 3.5vh 0 4.5vh 0;
@@ -107,13 +107,13 @@
 }
 .challenge h2 {
 	position: relative;
-	font-size: 2vw;
+	font-size: 3.15vw;
 	font-family: "Inter", sans-serif;
 	font-weight: 500;
 }
 .challenge p {
 	margin: 5vh 0 2vh 0;
-	font-size: 1.4vw;
+	font-size: 1.5vw;
 	font-family: "Inter", sans-serif;
 	font-weight: 500;
 	color: #0000007c;
@@ -168,7 +168,7 @@
 	}
 }
 
-.bg video {
+.bg {
 	animation: fadeInSlideUp 3s ease forwards;
 }
 /* ------------------------------------------------------------------------------------------------------------------------------------- */
@@ -279,6 +279,7 @@
 		margin: 5vh 0 15vh 0;
 	}
 	.challenge img {
+		padding: 0;
 		margin: 5vh 0 15vh 0;
 		width: 100%;
 	}
@@ -293,11 +294,11 @@
 		margin: 0 0 2vh 0;
 	}
 	.kongu p {
-		font-size: 4.5vw;
+		font-size: 5vw;
 		padding: 2vh 0 4.5vh 0;
 	}
 	.kongu .about p {
-		font-size: 4.5vw;
+		font-size: 5vw;
 		padding: 2vh 0 4.5vh 0;
 	}
 	.kongu .about h2 {
@@ -323,10 +324,10 @@
 		margin-bottom: 2.5vh;
 	}
 	.challenge h2 {
-		font-size: 4.5vw;
+		font-size: 7.5vw;
 		margin: 0 0 2vh 0;
 	}
 	.challenge p {
-		font-size: 4.5vw;
+		font-size: 5vw;
 	}
 }

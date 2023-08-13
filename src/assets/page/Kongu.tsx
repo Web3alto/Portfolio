@@ -8,9 +8,11 @@ import NavBar from "../components/navBar";
 import arrowDown from "../img/arrow-down.png";
 import konguBgVid from "../video/BgVid.mp4";
 import konguBgImg from "../img/Kongu.png";
-import treehouseKongu from "../video/Treehouse.mp4";
+import treehouseVid from "../video/Treehouse.mp4";
+import treehouseImg from "../img/TreehouseBg.png";
 
 function Kongu() {
+	
 	const [isSmallScreen, setSmallScreen] = useState(window.innerWidth < 999);
 
 	useEffect(() => {
@@ -209,17 +211,26 @@ function Kongu() {
 					relevance and credibility for enthusiasts and investors
 					alike.
 				</p>
-				<video
-					ref={challengeVideoRef}
-					src={treehouseKongu}
-					autoPlay
-					muted
-					loop
-					playsInline
-				></video>
+				<div className="asset">
+					{isSmallScreen ? (
+						<img
+							src={treehouseImg}
+							ref={challengeVideoRef}
+							alt="Kongu Background"
+						/>
+					) : (
+						<video
+							src={treehouseVid}
+							ref={challengeVideoRef}
+							autoPlay
+							muted
+							loop
+							playsInline
+						></video>
+					)}
+				</div>
 			</section>
 		</>
 	);
 }
-
 export default transition(Kongu);

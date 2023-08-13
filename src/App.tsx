@@ -1,5 +1,6 @@
 import "./assets/style/App.css";
 import { Routes, Route, useLocation } from "react-router-dom";
+import ScrollToTop from "./assets/components/ScrollToTop";
 import { useEffect, useState } from "react";
 import { motion, Variants } from "framer-motion"; // Import Variants type
 import { AnimatePresence } from "framer-motion";
@@ -11,6 +12,12 @@ import Nakama from "./assets/page/Nakama";
 import Loader from "./assets/components/loader";
 
 function App() {
+	const { pathname } = useLocation();
+
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, [pathname]);
+
 	const location = useLocation();
 	const [isLoading, setIsLoading] = useState(true);
 
@@ -112,6 +119,7 @@ function App() {
 				<Loader />
 			) : (
 				<>
+					<ScrollToTop />
 					{/* Only render the cursor if the user has interacted */}
 					{userInteracted && (
 						<motion.div

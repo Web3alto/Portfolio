@@ -1,4 +1,4 @@
-import { useLayoutEffect, useEffect } from "react";
+import { useRef, useEffect, useLayoutEffect } from "react";
 import RealTimeClock from "../components/realTime";
 import { Link } from "react-router-dom";
 // ------------------------------------------------------
@@ -12,6 +12,47 @@ import Nakama from "../img/nakama.png";
 import transition from "../components/transition";
 
 function Home() {
+	
+	const contactRef = useRef<HTMLDivElement | null>(null);
+
+	const scrollToElement = (duration: number) => {
+		const start: number = window.scrollY || window.pageYOffset;
+		const distance: number = contactRef.current!.offsetTop - start;
+		let startTime: number | null = null;
+
+		function animation(currentTime: number) {
+			if (startTime === null) startTime = currentTime;
+			const timeElapsed: number = currentTime - startTime;
+			const run: number = easeOutExpo(
+				timeElapsed,
+				start,
+				distance,
+				duration
+			);
+			window.scrollTo(0, run);
+			if (timeElapsed < duration) requestAnimationFrame(animation);
+		}
+
+		function easeOutExpo(
+			t: number,
+			b: number,
+			c: number,
+			d: number
+		): number {
+			return t === d ? b + c : c * (-Math.pow(2, (-10 * t) / d) + 1) + b;
+		}
+
+		requestAnimationFrame(animation);
+	};
+
+	const handleScroll = () => {
+		if (contactRef.current) {
+			setTimeout(() => {
+				scrollToElement(4000);
+			});
+		}
+	};
+
 	// ----------------------------- POP AT THE TOP OF THE VIEWPORT ---------------------------------------
 	useEffect(() => {
 		setTimeout(() => {
@@ -21,7 +62,7 @@ function Home() {
 
 	// ----------------------------- APPROACH ANIMATION ---------------------------------------
 	const textApproach =
-		"Working closely with you to understand your unique needs and goals. With an eye for detail and a commitment to excellence, we ensure that your project stand out in today's competitive landscape.";
+		"Working closely with you to understand your unique needs and goals. With an eye for detail and a commitment for excellence, to ensure that your project stand out in today's competitive landscape.";
 
 	const wordsApproach = textApproach.split(" ").map((word, wordIndex) => (
 		<span key={wordIndex} className="word">
@@ -241,7 +282,7 @@ function Home() {
 				<div className="right">
 					<div className="top">
 						<div className="slide-reveal-a contactt">
-							<a className="custom-hover">
+							<a className="custom-hover" onClick={handleScroll}>
 								<h2>Contact</h2>
 								<img src={arrowDown} alt="arrowDown" />
 							</a>
@@ -315,7 +356,7 @@ function Home() {
 					<h3>{content}</h3>
 				</div>
 			</section>
-			<section className="contact" id="contact">
+			<section className="contact" id="contact" ref={contactRef}>
 				<div className="contact-reveal-container">
 					<div className="top">
 						<div className="left contact-reveal">

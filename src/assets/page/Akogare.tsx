@@ -1,4 +1,4 @@
-import { useEffect, useRef, useLayoutEffect } from "react";
+import { useEffect, useRef, useLayoutEffect, useState } from "react";
 // ------------------------------------------------------
 import "../style/page/Akogare.css";
 // ------------------------------------------------------
@@ -7,9 +7,28 @@ import NavBar from "../components/navBar";
 // ------------------------------------------------------
 import arrowDown from "../img/arrow-down.png";
 import akogareBgVid from "../video/_AKGR_Website.mp4";
+import akogareBgImg from "../img/AkogareBg.png";
 import akogareGallery from "../img/Akogare_Gallery.png";
 
 function Akogare() {
+	const [isSmallScreen, setSmallScreen] = useState(window.innerWidth < 999);
+
+	useEffect(() => {
+		const handleResize = () => {
+			if (window.innerWidth < 999) {
+				setSmallScreen(true);
+			} else {
+				setSmallScreen(false);
+			}
+		};
+
+		window.addEventListener("resize", handleResize);
+
+		return () => {
+			window.removeEventListener("resize", handleResize);
+		};
+	}, []);
+
 	useLayoutEffect(() => {
 		const animateElements = [
 			{ selector: ".akogare h1", delay: 300 },
@@ -118,9 +137,10 @@ function Akogare() {
 				</div>
 				<div className="slide-reveal-a">
 					<p>
-						Akogare is a unique take on Web3 that combines art,
-						community and storytelling to create a new genre of
-						media and
+						Akogare is defined as the bridge between East & West in
+						Web3. They aim to empower artists to take control of
+						their own creative process and make their work available
+						to a global audience.
 					</p>
 				</div>
 
@@ -166,13 +186,17 @@ function Akogare() {
 				</div>
 
 				<div className="bg-a">
-					<video
-						src={akogareBgVid}
-						autoPlay
-						muted
-						loop
-						playsInline
-					></video>
+					{isSmallScreen ? (
+						<img src={akogareBgImg} alt="akogareBg" />
+					) : (
+						<video
+							src={akogareBgVid}
+							autoPlay
+							muted
+							loop
+							playsInline
+						></video>
+					)}
 				</div>
 			</section>
 			<section className="challenge-a">
@@ -180,11 +204,13 @@ function Akogare() {
 					The Challenge
 				</h2>
 				<p ref={challengeTextRef} className="challenge-reveal">
-					The challenge with Kongu was to translate their vision into
-					a fully functional and responsive website. We aimed to
-					connect imagination to reality establishing Kongu's
-					relevance and credibility for enthusiasts and investors
-					alike.
+					The challenge with Akogare centered on transforming their
+					conceptual vision into digital reality. The creation of a
+					custom VueJS website was a complex process. A particularly
+					unique challenge was engineering a custom, role-based PFP
+					generator integrated with Discord's API, adding a distinct
+					functionality to the site. Throughout, we ensured that the
+					Akogare website not only met but exceeded expectations.
 				</p>
 				<img
 					ref={challengeImageRef}

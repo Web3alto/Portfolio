@@ -291,7 +291,7 @@
 		margin: 0 0 2vh 0;
 	}
 	.nakama p {
-		font-size: 4.5vw;
+		font-size: 5vw;
 		padding: 2vh 0 4.5vh 0;
 	}
 	.about-n p {
@@ -321,10 +321,14 @@
 		margin-bottom: 2.5vh;
 	}
 	.challenge-n h2 {
-		font-size: 4.5vw;
+		font-size: 7.5vw;
 		margin: 0 0 2vh 0;
 	}
 	.challenge-n p {
-		font-size: 4.5vw;
+		font-size: 5vw;
+	}
+	.challenge-n img {
+		margin: 5vh 0 15vh 0;
+		padding: 0;
 	}
 }

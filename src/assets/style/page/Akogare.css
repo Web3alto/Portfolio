@@ -93,6 +93,9 @@
 	justify-content: center;
 	background: none;
 }
+.bg-a img {
+	width: 100%;
+}
 .bg-a video {
 	width: 100%;
 }
@@ -291,11 +294,11 @@
 		margin: 0 0 2vh 0;
 	}
 	.akogare p {
-		font-size: 4.5vw;
+		font-size: 5vw;
 		padding: 2vh 0 4.5vh 0;
 	}
 	.about-a p {
-		font-size: 4.5vw;
+		font-size: 5vw;
 		padding: 2vh 0 4.5vh 0;
 	}
 	.about-a h2 {
@@ -321,10 +324,15 @@
 		margin-bottom: 2.5vh;
 	}
 	.challenge-a h2 {
-		font-size: 4.5vw;
+		font-size: 7.5vw;
 		margin: 0 0 2vh 0;
 	}
 	.challenge-a p {
-		font-size: 4.5vw;
+		font-size: 5vw;
+	}
+	.challenge-a img {
+		margin: 5vh 0 15vh 0;
+		padding: 0;
+		width: 100%;
 	}
 }
