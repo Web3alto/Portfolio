@@ -10,9 +10,6 @@ import nakamaBG from "../img/NakamaBG.png";
 import nakamaMint from "../img/NakamaMint.png";
 
 function Nakama() {
-	const disableLink = (event: { preventDefault: () => void }) => {
-		event.preventDefault();
-	};
 	// ----------------------------- FIRST PAGE ANIMATION ---------------------------------------
 
 	useLayoutEffect(() => {
@@ -165,13 +162,9 @@ function Nakama() {
 							<p>May 2023 - Present</p>
 						</div>
 					</div>
-					<button
-						className="slide-reveal-n custom-hover"
-						type="button"
-						onClick={disableLink}
-					>
-						Coming Soon
-					</button>
+					<div className="slide-reveal-n">
+						<button className=" custom-hover">Coming Soon</button>
+					</div>
 				</div>
 
 				<div className="bg-n">

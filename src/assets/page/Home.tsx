@@ -343,7 +343,7 @@ function Home() {
 					unparalleled success for clients worldwide.
 				</h3>
 			</div>
-			<section className="about">
+			<section className="homeabout">
 				<div className="left">
 					<h2>About</h2>
 				</div>

@@ -143,9 +143,11 @@
 .role-a .title-a,
 .role-a p,
 .date-a .title-a,
-.date-a p,
-.about-a button {
+.date-a p {
 	transform: translateY(100%);
+}
+.about-a button {
+	transform: translateY(200%);
 }
 @keyframes slide-reveal-a {
 	to {

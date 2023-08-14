@@ -140,9 +140,11 @@
 .role-n .title-n,
 .role-n p,
 .date-n .title-n,
-.date-n p,
-.about-n button {
+.date-n p {
 	transform: translateY(100%);
+}
+.about-n button {
+	transform: translateY(200%);
 }
 @keyframes slide-reveal-n {
 	to {

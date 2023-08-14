@@ -178,11 +178,9 @@ function Akogare() {
 							<p>Apr 2023 - Present</p>
 						</div>
 					</div>
-					<a href="" target="blank_">
-						<button className="slide-reveal-a custom-hover">
-							Coming Soon
-						</button>
-					</a>
+					<div className="slide-reveal-a">
+						<button className=" custom-hover">Coming Soon</button>
+					</div>
 				</div>
 
 				<div className="bg-a">

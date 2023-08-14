@@ -118,17 +118,17 @@ h2 {
 	display: none;
 }
 /* ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ */
-.about {
+.homeabout {
 	display: flex;
 	align-items: flex-start;
 	justify-content: flex-start;
 	width: 95vw;
 	margin: 0 auto;
 }
-.about .left {
+.homeabout .left {
 	width: 42.5%;
 }
-.about .right {
+.homeabout .right {
 	width: 57.5%;
 	border-left: 2px solid #000000;
 	display: flex;
@@ -136,7 +136,7 @@ h2 {
 	justify-content: space-between;
 	flex-direction: column;
 }
-.about .right h3 {
+.homeabout .right h3 {
 	width: 92.5%;
 	margin: 0 auto;
 	font-size: 3.15vw;
@@ -479,10 +479,10 @@ img[alt="arrowRight"] {
 	h2 {
 		font-size: 2.25vw;
 	}
-	.about .right {
+	.homeabout .right {
 		border-left: 1px solid #000000;
 	}
-	.about .right h3 {
+	.homeabout .right h3 {
 		font-size: 3.5vw;
 		padding: 7.5vh 0 12.5vh 0;
 	}
@@ -601,18 +601,18 @@ img[alt="arrowRight"] {
 		font-family: "Inter", sans-serif;
 		font-weight: 400;
 	}
-	.about {
+	.homeabout {
 		flex-direction: column;
 		width: 90vw;
 		margin: 5vh auto 0 auto;
 	}
-	.about .right {
+	.homeabout .right {
 		width: 100%;
 		border-top: 1px solid #000000;
 		border-left: none;
 		margin: 2.5vh 0 0 0;
 	}
-	.about .right h3 {
+	.homeabout .right h3 {
 		width: 100%;
 		font-size: 7.5vw;
 		padding: 5vh 0 12.5vh 0;

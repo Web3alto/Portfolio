@@ -12,7 +12,6 @@ import treehouseVid from "../video/Treehouse.mp4";
 import treehouseImg from "../img/TreehouseBg.png";
 
 function Kongu() {
-	
 	const [isSmallScreen, setSmallScreen] = useState(window.innerWidth < 999);
 
 	useEffect(() => {
@@ -179,10 +178,12 @@ function Kongu() {
 							<p>Dec 2022 - March 2023</p>
 						</div>
 					</div>
-					<a href="https://kongu.io/" target="blank_">
-						<button className="slide-reveal custom-hover">
-							Launch Site
-						</button>
+					<a href="https://kongu.io/" target="_blank">
+						<div className="slide-reveal">
+							<button className=" custom-hover">
+								Launch Site
+							</button>
+						</div>
 					</a>
 				</div>
 
