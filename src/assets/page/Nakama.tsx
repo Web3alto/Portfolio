@@ -10,6 +10,10 @@ import nakamaBG from "../img/NakamaBG.png";
 import nakamaMint from "../img/NakamaMint.png";
 
 function Nakama() {
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, []);
+
 	// ----------------------------- FIRST PAGE ANIMATION ---------------------------------------
 
 	useLayoutEffect(() => {
@@ -105,10 +109,6 @@ function Nakama() {
 		return () => {
 			observer.disconnect();
 		};
-	}, []);
-
-	useEffect(() => {
-		window.scrollTo(0, 0);
 	}, []);
 
 	return (

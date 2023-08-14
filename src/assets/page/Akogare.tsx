@@ -11,6 +11,11 @@ import akogareBgImg from "../img/AkogareBg.png";
 import akogareGallery from "../img/Akogare_Gallery.png";
 
 function Akogare() {
+
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, []);
+	
 	const [isSmallScreen, setSmallScreen] = useState(window.innerWidth < 999);
 
 	useEffect(() => {
@@ -122,10 +127,6 @@ function Akogare() {
 		return () => {
 			observer.disconnect();
 		};
-	}, []);
-
-	useEffect(() => {
-		window.scrollTo(0, 0);
 	}, []);
 
 	return (

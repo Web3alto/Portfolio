@@ -12,6 +12,11 @@ import treehouseVid from "../video/Treehouse.mp4";
 import treehouseImg from "../img/TreehouseBg.png";
 
 function Kongu() {
+
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, []);
+	
 	const [isSmallScreen, setSmallScreen] = useState(window.innerWidth < 999);
 
 	useEffect(() => {
@@ -122,10 +127,6 @@ function Kongu() {
 		return () => {
 			observer.disconnect();
 		};
-	}, []);
-
-	useEffect(() => {
-		window.scrollTo(0, 0);
 	}, []);
 
 	return (
