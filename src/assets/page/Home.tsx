@@ -12,7 +12,6 @@ import Nakama from "../img/nakama.png";
 import transition from "../components/transition";
 
 function Home() {
-	
 	const contactRef = useRef<HTMLDivElement | null>(null);
 
 	const scrollToElement = (duration: number) => {
@@ -60,6 +59,38 @@ function Home() {
 		}, 0);
 	}, []);
 
+	// ----------------------------- ABOUT ANIMATION ---------------------------------------
+	const textAbout =
+		"Known as Alto in the web3 space, I'm a developer focused on innovation and self-improvement, balancing my passion for technology with dedication to fitness and personal growth.";
+
+	const wordsAbout = textAbout.split(" ").map((word, wordIndex) => (
+		<span key={wordIndex} className="word">
+			{word}&nbsp;
+		</span>
+	));
+
+	useEffect(() => {
+		const observer = new IntersectionObserver(
+			(entries) => {
+				entries.forEach((entry) => {
+					if (entry.isIntersecting) {
+						entry.target.classList.add("reveal-word");
+					}
+				});
+			},
+			{
+				root: null,
+				rootMargin: "0px",
+				threshold: 0.5, // Adjust as needed
+			}
+		);
+
+		document.querySelectorAll(".word").forEach((word) => {
+			observer.observe(word);
+		});
+
+		return () => observer.disconnect();
+	}, []);
 	// ----------------------------- APPROACH ANIMATION ---------------------------------------
 	const textApproach =
 		"Working closely with you to understand your unique needs and goals. With an eye for detail and a commitment for excellence, to ensure that your project stand out in today's competitive landscape.";
@@ -312,6 +343,14 @@ function Home() {
 					unparalleled success for clients worldwide.
 				</h3>
 			</div>
+			<section className="about">
+				<div className="left">
+					<h2>About</h2>
+				</div>
+				<div className="right">
+					<h3>{wordsAbout}</h3>
+				</div>
+			</section>
 			<section className="projects">
 				<div className="title">
 					<h2>Selected Works</h2>

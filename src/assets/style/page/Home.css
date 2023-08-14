@@ -107,7 +107,7 @@ h2 {
 	margin: 0 auto;
 }
 .intro .right .bottom h3 {
-	padding: 18vh 0 0 0;
+	padding: 18vh 0 20vh 0;
 	font-size: 3.15vw;
 	font-family: "Inter", sans-serif;
 	font-weight: 400;
@@ -116,6 +116,33 @@ h2 {
 	width: 95vw;
 	margin: 0 auto;
 	display: none;
+}
+/* ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ */
+.about {
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-start;
+	width: 95vw;
+	margin: 0 auto;
+}
+.about .left {
+	width: 42.5%;
+}
+.about .right {
+	width: 57.5%;
+	border-left: 2px solid #000000;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-direction: column;
+}
+.about .right h3 {
+	width: 92.5%;
+	margin: 0 auto;
+	font-size: 3.15vw;
+	font-family: "Inter", sans-serif;
+	font-weight: 400;
+	padding: 10vh 0 25vh 0;
 }
 /* ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ */
 .projects {
@@ -446,11 +473,18 @@ img[alt="arrowRight"] {
 		width: 1vw;
 	}
 	.intro .right .bottom h3 {
-		padding: 10vh 0 0 0;
+		padding: 10vh 0 10vh 0;
 		font-size: 3.5vw;
 	}
 	h2 {
 		font-size: 2.25vw;
+	}
+	.about .right {
+		border-left: 1px solid #000000;
+	}
+	.about .right h3 {
+		font-size: 3.5vw;
+		padding: 7.5vh 0 12.5vh 0;
 	}
 	.projects .title img {
 		width: 1vw;
@@ -563,8 +597,25 @@ img[alt="arrowRight"] {
 	}
 	.mobile-head h3 {
 		font-size: 7.5vw;
+		padding: 5vh 0 16.6vh 0;
 		font-family: "Inter", sans-serif;
 		font-weight: 400;
+	}
+	.about {
+		flex-direction: column;
+		width: 90vw;
+		margin: 5vh auto 0 auto;
+	}
+	.about .right {
+		width: 100%;
+		border-top: 1px solid #000000;
+		border-left: none;
+		margin: 2.5vh 0 0 0;
+	}
+	.about .right h3 {
+		width: 100%;
+		font-size: 7.5vw;
+		padding: 5vh 0 12.5vh 0;
 	}
 	.projects {
 		padding: 10vh 0 0 0;
