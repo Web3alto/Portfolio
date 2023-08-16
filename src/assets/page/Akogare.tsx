@@ -11,11 +11,10 @@ import akogareBgImg from "../img/AkogareBg.png";
 import akogareGallery from "../img/Akogare_Gallery.png";
 
 function Akogare() {
-
 	useEffect(() => {
 		window.scrollTo(0, 0);
 	}, []);
-	
+
 	const [isSmallScreen, setSmallScreen] = useState(window.innerWidth < 999);
 
 	useEffect(() => {
@@ -154,7 +153,12 @@ function Akogare() {
 							</div>
 						</div>
 						<div className="slide-reveal-a">
-							<p>Akogare</p>
+							<a
+								href="https://twitter.com/AkogareOfficial"
+								target="blank_"
+							>
+								<p className="custom-hover">Akogare</p>
+							</a>
 						</div>
 					</div>
 					<div className="role-a">

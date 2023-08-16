@@ -12,11 +12,10 @@ import treehouseVid from "../video/Treehouse.mp4";
 import treehouseImg from "../img/TreehouseBg.png";
 
 function Kongu() {
-
 	useEffect(() => {
 		window.scrollTo(0, 0);
 	}, []);
-	
+
 	const [isSmallScreen, setSmallScreen] = useState(window.innerWidth < 999);
 
 	useEffect(() => {
@@ -154,7 +153,12 @@ function Kongu() {
 							</div>
 						</div>
 						<div className="slide-reveal">
-							<p>Kongu</p>
+							<a
+								href="https://twitter.com/KonguNFT"
+								target="blank_"
+							>
+								<p className="custom-hover">Kongu</p>
+							</a>
 						</div>
 					</div>
 					<div className="role">

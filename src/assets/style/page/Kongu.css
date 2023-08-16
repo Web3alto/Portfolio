@@ -78,13 +78,11 @@
 	font-size: 1vw;
 	font-family: "Inter", sans-serif;
 	font-weight: 500;
-	transition: 0.25s ease;
+	transition: 0.5s ease;
 	margin-bottom: 5vh;
 	cursor: none;
 }
-.kongu .about button:hover {
-	transform: scale(1.05);
-}
+
 .kongu .bg {
 	width: 100%;
 	height: 65vh;

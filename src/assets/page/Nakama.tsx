@@ -137,7 +137,12 @@ function Nakama() {
 							</div>
 						</div>
 						<div className="slide-reveal-n">
-							<p>Nakama</p>
+							<a
+								href="https://twitter.com/TheNakamaClub"
+								target="blank_"
+							>
+								<p className="custom-hover">Nakama</p>
+							</a>
 						</div>
 					</div>
 					<div className="role-n">

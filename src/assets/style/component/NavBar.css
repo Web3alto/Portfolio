@@ -42,6 +42,11 @@ nav .right {
 	justify-content: center;
 	cursor: pointer;
 }
+nav .right a {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
 nav .right h2 {
 	font-size: 1.5vw;
 	font-family: "Inter", sans-serif;

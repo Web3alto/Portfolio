@@ -17,8 +17,13 @@ const NavBar = () => {
 				</h1>
 			</div>
 			<div className="right custom-hover">
-				<h2>Contact</h2>
-				<img src={arrowDown} alt="arrowDown" />
+				<a
+					href="mailto:web3alto@gmail.com"
+					className="custom-hover contact-reveal"
+				>
+					<h2>Contact</h2>
+					<img src={arrowDown} alt="arrowDown" />
+				</a>
 			</div>
 		</nav>
 	);
