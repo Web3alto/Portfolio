@@ -5,7 +5,7 @@
 	list-style-type: none;
 	text-decoration: none;
 	color: #000000;
-	cursor: none !important;
+	/* cursor: none !important; */
 }
 body,
 html {

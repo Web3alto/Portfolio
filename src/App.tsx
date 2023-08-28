@@ -71,47 +71,47 @@ function App() {
 		};
 	}, []);
 
-	const [cursorVariant, setCursorVariant] = useState("default");
-	const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+	// const [cursorVariant, setCursorVariant] = useState("default");
+	// const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
-	useEffect(() => {
-		const mouseMove = (e: MouseEvent) => {
-			setMousePosition({
-				x: e.clientX,
-				y: e.clientY,
-			});
+	// useEffect(() => {
+	// 	const mouseMove = (e: MouseEvent) => {
+	// 		setMousePosition({
+	// 			x: e.clientX,
+	// 			y: e.clientY,
+	// 		});
 
-			const elements = document.querySelectorAll(".custom-hover");
-			const isHovering = Array.from(elements).some((element) =>
-				element.contains(e.target as Node)
-			);
+	// 		const elements = document.querySelectorAll(".custom-hover");
+	// 		const isHovering = Array.from(elements).some((element) =>
+	// 			element.contains(e.target as Node)
+	// 		);
 
-			if (isHovering) {
-				setCursorVariant("hover");
-			} else {
-				setCursorVariant("default");
-			}
-		};
+	// 		if (isHovering) {
+	// 			setCursorVariant("hover");
+	// 		} else {
+	// 			setCursorVariant("default");
+	// 		}
+	// 	};
 
-		window.addEventListener("mousemove", mouseMove);
+	// 	window.addEventListener("mousemove", mouseMove);
 
-		return () => {
-			window.removeEventListener("mousemove", mouseMove);
-		};
-	}, []);
+	// 	return () => {
+	// 		window.removeEventListener("mousemove", mouseMove);
+	// 	};
+	// }, []);
 
-	const variants: Variants = {
-		default: {
-			x: mousePosition.x - 8,
-			y: mousePosition.y - 8,
-			scale: 1,
-		},
-		hover: {
-			x: mousePosition.x - 8,
-			y: mousePosition.y - 8,
-			scale: 2.5,
-		},
-	};
+	// const variants: Variants = {
+	// 	default: {
+	// 		x: mousePosition.x - 8,
+	// 		y: mousePosition.y - 8,
+	// 		scale: 1,
+	// 	},
+	// 	hover: {
+	// 		x: mousePosition.x - 8,
+	// 		y: mousePosition.y - 8,
+	// 		scale: 2.5,
+	// 	},
+	// };
 
 	return (
 		<>
@@ -121,14 +121,14 @@ function App() {
 				<>
 					<ScrollToTop />
 					{/* Only render the cursor if the user has interacted */}
-					{userInteracted && (
+					{/* {userInteracted && (
 						<motion.div
 							className="cursor"
 							variants={variants}
 							animate={cursorVariant}
 							transition={{ ease: "linear", duration: 0.1 }}
 						/>
-					)}
+					)} */}
 					<AnimatePresence mode="wait">
 						<Routes location={location} key={location.pathname}>
 							<Route index element={<Home />} />
