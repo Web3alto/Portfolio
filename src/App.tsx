@@ -2,7 +2,7 @@ import "./assets/style/App.css";
 import { Routes, Route, useLocation } from "react-router-dom";
 import ScrollToTop from "./assets/components/ScrollToTop";
 import { useEffect, useState } from "react";
-import { motion, Variants } from "framer-motion"; // Import Variants type
+// import { motion, Variants } from "framer-motion"; // Import Variants type
 import { AnimatePresence } from "framer-motion";
 import Lenis from "@studio-freight/lenis";
 import Home from "./assets/page/Home";
@@ -52,24 +52,24 @@ function App() {
 
 	// ----------------------------- MOUSE CURSOR ---------------------------------------
 
-	const [userInteracted, setUserInteracted] = useState(false);
+	// const [userInteracted, setUserInteracted] = useState(false);
 
-	useEffect(() => {
-		// Define a function that will be called on user interaction
-		const handleUserInteraction = () => {
-			setUserInteracted(true);
-		};
+	// useEffect(() => {
+	// 	// Define a function that will be called on user interaction
+	// 	const handleUserInteraction = () => {
+	// 		setUserInteracted(true);
+	// 	};
 
-		// Add event listeners for user interaction
-		window.addEventListener("mousemove", handleUserInteraction);
-		window.addEventListener("keydown", handleUserInteraction);
+	// 	// Add event listeners for user interaction
+	// 	window.addEventListener("mousemove", handleUserInteraction);
+	// 	window.addEventListener("keydown", handleUserInteraction);
 
-		// Remove the event listeners when the component is unmounted
-		return () => {
-			window.removeEventListener("mousemove", handleUserInteraction);
-			window.removeEventListener("keydown", handleUserInteraction);
-		};
-	}, []);
+	// 	// Remove the event listeners when the component is unmounted
+	// 	return () => {
+	// 		window.removeEventListener("mousemove", handleUserInteraction);
+	// 		window.removeEventListener("keydown", handleUserInteraction);
+	// 	};
+	// }, []);
 
 	// const [cursorVariant, setCursorVariant] = useState("default");
 	// const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
