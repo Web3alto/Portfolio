@@ -126,7 +126,7 @@ function App() {
 							className="cursor"
 							variants={variants}
 							animate={cursorVariant}
-							transition={{ ease: "linear", duration: 0.2 }}
+							transition={{ ease: "linear", duration: 0.1 }}
 						/>
 					)}
 					<AnimatePresence mode="wait">
