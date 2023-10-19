@@ -6,10 +6,10 @@ import transition from "../components/transition";
 import NavBar from "../components/navBar";
 // ------------------------------------------------------
 import arrowDown from "../img/arrow-down.png";
-import nakamaBG from "../img/NakamaBG.png";
-import nakamaMint from "../img/NakamaMint.png";
+import metaversusBG from "../img/metaversusBg.png";
+import metaversusWorld from "../img/worldBg.png";
 
-function Nakama() {
+function Metaversus() {
 	useEffect(() => {
 		window.scrollTo(0, 0);
 	}, []);
@@ -168,12 +168,12 @@ function Nakama() {
 						</div>
 					</div>
 					<div className="slide-reveal-n">
-						<button className="">Coming Soon</button>
+						<button className=" custom-hover">Coming Soon</button>
 					</div>
 				</div>
 
 				<div className="bg-n">
-					<img src={nakamaBG} alt="nakamaBG" />
+					<img src={metaversusBG} alt="metaversusBG" />
 				</div>
 			</section>
 			<section className="challenge-n">
@@ -192,12 +192,12 @@ function Nakama() {
 				</p>
 				<img
 					ref={challengeImageRef}
-					src={nakamaMint}
-					alt="nakamaMint"
+					src={metaversusWorld}
+					alt="metaversusWorld"
 				/>
 			</section>
 		</>
 	);
 }
 
-export default transition(Nakama);
+export default transition(Metaversus);

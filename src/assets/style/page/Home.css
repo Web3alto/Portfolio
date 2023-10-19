@@ -170,55 +170,28 @@ h2 {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	width: 20vw;
+	width: 22.5vw;
 	height: 65vh;
-	background: linear-gradient(to right, black 2px, transparent 2px) 0 0,
-		linear-gradient(to right, black 2px, transparent 2px) 0 100%,
-		linear-gradient(to left, black 2px, transparent 2px) 100% 0,
-		linear-gradient(to left, black 2px, transparent 2px) 100% 100%,
-		linear-gradient(to bottom, black 2px, transparent 2px) 0 0,
-		linear-gradient(to bottom, black 2px, transparent 2px) 100% 0,
-		linear-gradient(to top, black 2px, transparent 2px) 0 100%,
-		linear-gradient(to top, black 2px, transparent 2px) 100% 100%;
-
-	background-repeat: no-repeat;
-	background-size: 80px 80px;
-	margin: 0 4vw;
+	margin: 0 1vw;
+	filter: grayscale(100%);
+	transition: width 0.5s ease, filter 0.35s ease;
 }
-.card img {
-	width: 45%;
+.first-card {
+	background: url(../../img/ASASzeadaz.png) center / cover;
 }
-.card .home-akogare {
-	width: 65%;
+.second-card {
+	background: url(../../img/4H7kxEC30VT8jhEWMK6e.png) center / cover;
 }
-.card .home-nakama {
-	width: 30%;
+.third-card {
+	background: url(../../img/4H7kxEC30VT8jhEWMK6eazeza.png) center / cover;
 }
-.card h3 {
-	position: absolute;
-	bottom: -3.5vh;
-	left: 0%;
-	font-size: 1vw;
-	color: #000000;
-	letter-spacing: 0.1vw;
-	font-family: "Inter", sans-serif;
-	font-weight: 500;
+.fourth-card {
+	background: url(../../img/4H7kxEC30VT8jhEWMK6eeazeazea.png) center / cover;
 }
 .card:hover {
-	transition: width 0.85s ease-in-out, background-size 0.85s ease-in-out;
-	width: 85vw;
+	filter: grayscale(15%);
+	width: 35vw;
 	cursor: pointer;
-	background-size: 100% 100%;
-}
-.card:hover::after {
-	content: "DEVELOPER";
-	position: absolute;
-	bottom: -3vh;
-	right: 0%;
-	color: #0000006b;
-	font-family: "Inter", sans-serif;
-	font-weight: 500;
-	font-size: 1vw;
 }
 .approach {
 	display: flex;
@@ -496,17 +469,6 @@ img[alt="arrowRight"] {
 	.card {
 		width: 20vw;
 		height: 22.5vh;
-		background: linear-gradient(to right, black 1.25px, transparent 1.25px)
-				0 0,
-			linear-gradient(to right, black 1.25px, transparent 1.25px) 0 100%,
-			linear-gradient(to left, black 1.25px, transparent 1.25px) 100% 0,
-			linear-gradient(to left, black 1.25px, transparent 1.25px) 100% 100%,
-			linear-gradient(to bottom, black 1.25px, transparent 1.25px) 0 0,
-			linear-gradient(to bottom, black 1.25px, transparent 1.25px) 100% 0,
-			linear-gradient(to top, black 1.25px, transparent 1.25px) 0 100%,
-			linear-gradient(to top, black 1.25px, transparent 1.25px) 100% 100%;
-		background-repeat: no-repeat;
-		background-size: 50px 50px;
 	}
 	.approach .right {
 		border-left: 1px solid #000000;
@@ -629,24 +591,9 @@ img[alt="arrowRight"] {
 		flex-direction: column;
 	}
 	.card {
-		margin: 15vw 0;
+		margin: 10vw 0;
 		width: 80vw;
 		height: 33vh;
-		background: linear-gradient(to right, black 1.25px, transparent 1.25px)
-				0 0,
-			linear-gradient(to right, black 1.25px, transparent 1.25px) 0 100%,
-			linear-gradient(to left, black 1.25px, transparent 1.25px) 100% 0,
-			linear-gradient(to left, black 1.25px, transparent 1.25px) 100% 100%,
-			linear-gradient(to bottom, black 1.25px, transparent 1.25px) 0 0,
-			linear-gradient(to bottom, black 1.25px, transparent 1.25px) 100% 0,
-			linear-gradient(to top, black 1.25px, transparent 1.25px) 0 100%,
-			linear-gradient(to top, black 1.25px, transparent 1.25px) 100% 100%;
-		background-repeat: no-repeat;
-		background-size: 50px 50px;
-	}
-	.card h3 {
-		bottom: -4.5vh;
-		font-size: 4vw;
 	}
 	.approach {
 		flex-direction: column;

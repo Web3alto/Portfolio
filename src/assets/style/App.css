@@ -16,19 +16,22 @@ body::-webkit-scrollbar {
 	width: 0;
 }
 
-.cursor {
-	width: 20px;
-	height: 20px;
+.cursor-follower {
+	width: 45px;
+	height: 45px;
+	border: 2px solid rgba(128, 128, 128, 0.644);
+	background: transparent;
 	border-radius: 50%;
-	background-color: white;
 	position: fixed;
 	pointer-events: none;
-	z-index: 99999;
-	mix-blend-mode: difference;
+	z-index: 9999;
+	transition: transform 0.025s ease;
 }
-.cursor-scale {
-	transform: scale(3);
+
+.cursor-follower.delayed {
+	transform: scale(0);
 }
+
 ::selection {
 	background: #000000; /* background color for the selected text */
 	color: white; /* text color for the selected text */
@@ -58,7 +61,7 @@ html.lenis {
 }
 
 @media screen and (max-width: 999px) {
-	.cursor {
+	.cursor-follower {
 		display: none;
 	}
 }
