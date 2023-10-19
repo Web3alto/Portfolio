@@ -7,7 +7,7 @@ Welcome to my portfolio! Here you'll find a collection of my selected works, sho
 ## Technologies and Tools
 
 - **Design:** Figma
-- **Development:** VueJS
+- **Development:** ReactJS
 - **Animation:** Framer Motion & CSS
 
 ## Selected Works
