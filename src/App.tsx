@@ -10,7 +10,6 @@ import Akogare from "./assets/page/Akogare";
 import Nakama from "./assets/page/Nakama";
 import Metaversus from "./assets/page/Metaversus";
 import Loader from "./assets/components/loader";
-import CursorFollower from "./assets/components/cursorFollow";
 
 function App() {
 	const { pathname } = useLocation();
@@ -57,7 +56,6 @@ function App() {
 				<Loader />
 			) : (
 				<>
-					<CursorFollower />
 					<ScrollToTop />
 					<AnimatePresence mode="wait">
 						<Routes location={location} key={location.pathname}>
