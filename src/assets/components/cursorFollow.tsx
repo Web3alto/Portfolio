@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { motion, useAnimation } from "framer-motion";
+import { motion, useAnimation, Transition } from "framer-motion";
 import "../style/App.css";
 
 interface CursorPosition {
@@ -34,6 +34,13 @@ const CursorFollower: React.FC = () => {
 		controls.start({ x: cursorPosition.x, y: cursorPosition.y });
 	}, [cursorPosition, controls]);
 
+	const customTransition: Transition = {
+		type: "spring",
+		stiffness: 165,
+		damping: 20,
+		ease: "easeInOut",
+	};
+
 	return (
 		<motion.div
 			className="cursor-follower"
@@ -43,12 +50,7 @@ const CursorFollower: React.FC = () => {
 			}}
 			animate={controls}
 			initial={{ opacity: 1 }}
-			transition={{
-				type: "spring",
-				stiffness: 165,
-				damping: 20,
-				ease: "ease-in-out",
-			}}
+			transition={customTransition}
 		></motion.div>
 	);
 };

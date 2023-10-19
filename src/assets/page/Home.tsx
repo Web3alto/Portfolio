@@ -89,50 +89,6 @@ function Home() {
 		return () => observer.disconnect();
 	}, []);
 
-	// ----------------------------- CAPABILITIES ANIMATION ---------------------------------------
-	const lines = [
-		"Web development",
-		"User experience",
-		"Interface design",
-		"Blockchain integration",
-		"Performance optimization",
-	];
-
-	const content = lines.map((line, lineIndex) => (
-		<div key={lineIndex}>
-			{line.split(" ").map((word, wordIndex) => (
-				<span key={`${lineIndex}-${wordIndex}`} className="word">
-					{word}&nbsp;
-				</span>
-			))}
-			<br />
-		</div>
-	));
-
-	useEffect(() => {
-		const observer = new IntersectionObserver(
-			(entries) => {
-				entries.forEach((entry) => {
-					if (entry.isIntersecting) {
-						entry.target.classList.add("visible");
-					}
-				});
-			},
-			{
-				rootMargin: "0px",
-				threshold: 0.1,
-			}
-		);
-
-		document
-			.querySelectorAll(".capabilities .right h3 .word")
-			.forEach((word) => {
-				observer.observe(word);
-			});
-
-		return () => observer.disconnect();
-	}, []);
-
 	// ----------------------------- TYPEWRITER ANIMATION ---------------------------------------
 
 	// ----------------------------- CARD ANIMATION ---------------------------------------
