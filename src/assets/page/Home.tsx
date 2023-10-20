@@ -89,8 +89,6 @@ function Home() {
 		return () => observer.disconnect();
 	}, []);
 
-	// ----------------------------- TYPEWRITER ANIMATION ---------------------------------------
-
 	// ----------------------------- CARD ANIMATION ---------------------------------------
 
 	useEffect(() => {
@@ -276,6 +274,10 @@ function Home() {
 					<Link
 						className="card custom-hover first-card"
 						to={"/kongu"}
+					></Link>
+					<Link
+						className="card custom-hover second-card"
+						to={"/metaversus"}
 					></Link>
 					<Link
 						className="card custom-hover third-card"

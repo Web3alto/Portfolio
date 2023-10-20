@@ -5,7 +5,7 @@
 	list-style-type: none;
 	text-decoration: none;
 	color: #000000;
-	/* cursor: none !important; */
+	
 }
 body,
 html {
@@ -16,25 +16,9 @@ body::-webkit-scrollbar {
 	width: 0;
 }
 
-.cursor-follower {
-	width: 45px;
-	height: 45px;
-	border: 2px solid rgba(128, 128, 128, 0.644);
-	background: transparent;
-	border-radius: 50%;
-	position: fixed;
-	pointer-events: none;
-	z-index: 9999;
-	transition: transform 0.025s ease;
-}
-
-.cursor-follower.delayed {
-	transform: scale(0);
-}
-
 ::selection {
-	background: #000000; /* background color for the selected text */
-	color: white; /* text color for the selected text */
+	background: #000000; 
+	color: white; 
 }
 ::-moz-selection {
 	background: #000000;
@@ -58,10 +42,4 @@ html.lenis {
 
 .lenis.lenis-stopped {
 	overflow: hidden;
-}
-
-@media screen and (max-width: 999px) {
-	.cursor-follower {
-		display: none;
-	}
 }

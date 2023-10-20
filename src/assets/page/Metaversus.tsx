@@ -1,6 +1,6 @@
 import { useEffect, useLayoutEffect, useRef } from "react";
 // ------------------------------------------------------
-import "../style/page/Nakama.css";
+import "../style/page/Metaversus.css";
 // ------------------------------------------------------
 import transition from "../components/transition";
 import NavBar from "../components/navBar";
@@ -18,15 +18,15 @@ function Metaversus() {
 
 	useLayoutEffect(() => {
 		const animateElements = [
-			{ selector: ".nakama h1", delay: 300 },
-			{ selector: ".nakama p", delay: 600 },
-			{ selector: ".client-n .title-n", delay: 900 }, // Updated selector
-			{ selector: ".client-n p", delay: 900 },
-			{ selector: ".role-n .title-n", delay: 1200 }, // Updated selector
-			{ selector: ".role-n p", delay: 1200 },
-			{ selector: ".date-n .title-n", delay: 1500 }, // Updated selector
-			{ selector: ".date-n p", delay: 1500 },
-			{ selector: ".about-n button", delay: 1800 },
+			{ selector: ".metaversus h1", delay: 300 },
+			{ selector: ".metaversus p", delay: 600 },
+			{ selector: ".client-m .title-m", delay: 900 },
+			{ selector: ".client-m p", delay: 900 },
+			{ selector: ".role-m .title-m", delay: 1200 },
+			{ selector: ".role-m p", delay: 1200 },
+			{ selector: ".date-m .title-m", delay: 1500 },
+			{ selector: ".date-m p", delay: 1500 },
+			{ selector: ".about-m button", delay: 1800 },
 		];
 
 		const timers = animateElements.map((item) => {
@@ -101,7 +101,7 @@ function Metaversus() {
 
 		const observer = new IntersectionObserver(handleScroll, options);
 
-		const challengeImgRef = document.querySelector(".challenge-n img");
+		const challengeImgRef = document.querySelector(".challenge-m img");
 		if (challengeImgRef) {
 			observer.observe(challengeImgRef);
 		}
@@ -114,81 +114,83 @@ function Metaversus() {
 	return (
 		<>
 			<NavBar />
-			<section className="nakama">
-				<div className="slide-reveal-n">
-					<h1>NAKAMA</h1>
+			<section className="metaversus">
+				<div className="slide-reveal-m">
+					<h1>METAVERSUS</h1>
 				</div>
-				<div className="slide-reveal-n">
+				<div className="slide-reveal-m">
 					<p>
-						Nakama is an Education Platform Designed By Todays
-						Leaders, Tailored For Tomorrows Visionaries. Their
-						community is composed of the Web3 workforce that is
-						still concentrated on bringing value and growing the
-						Web3 community in the bear market.
+						Metaversus app is designed to provide users with an
+						immersive experience of the metaverse, where virtual
+						reality meets reality. You can explore various metaverse
+						worlds and connect with friends, all while enjoying a
+						cutting-edge user interface.
 					</p>
 				</div>
 
-				<div className="about-n">
-					<div className="client-n">
-						<div className="slide-reveal-container-n">
-							<div className="title-n slide-reveal-n">
+				<div className="about-m">
+					<div className="client-m">
+						<div className="slide-reveal-container-m">
+							<div className="title-m slide-reveal-m">
 								<h2>Client</h2>
 								<img src={arrowDown} alt="arrowDown" />
 							</div>
 						</div>
-						<div className="slide-reveal-n">
-							<a
-								href="https://twitter.com/TheNakamaClub"
-								target="blank_"
-							>
-								<p className="custom-hover">Nakama</p>
-							</a>
+						<div className="slide-reveal-m">
+							<p className="custom-hover">None</p>
 						</div>
 					</div>
-					<div className="role-n">
-						<div className="slide-reveal-container-n">
-							<div className="title-n slide-reveal-n">
+					<div className="role-m">
+						<div className="slide-reveal-container-m">
+							<div className="title-m slide-reveal-m">
 								<h2>Role</h2>
 								<img src={arrowDown} alt="arrowDown" />
 							</div>
 						</div>
-						<div className="slide-reveal-n">
-							<p>Development </p>
+						<div className="slide-reveal-m">
+							<p>Development</p>
 						</div>
 					</div>
-					<div className="date-n">
-						<div className="slide-reveal-container-n">
-							<div className="title-n slide-reveal-n">
+					<div className="date-m">
+						<div className="slide-reveal-container-m">
+							<div className="title-m slide-reveal-m">
 								<h2>Date</h2>
 								<img src={arrowDown} alt="arrowDown" />
 							</div>
 						</div>
-						<div className="slide-reveal-n">
-							<p>May 2023 - Present</p>
+						<div className="slide-reveal-m">
+							<p>October 2023</p>
 						</div>
 					</div>
-					<div className="slide-reveal-n">
-						<button className=" custom-hover">Coming Soon</button>
-					</div>
+					<a
+						href="https://metaversus-webapp.vercel.app/"
+						target="_blank"
+					>
+						<div className="slide-reveal">
+							<button>Launch Site</button>
+						</div>
+					</a>
 				</div>
 
-				<div className="bg-n">
-					<img src={metaversusBG} alt="metaversusBG" />
+				<div className="bg-m">
+					<img src={metaversusBG} alt="metaversusBG1" />
 				</div>
 			</section>
-			<section className="challenge-n">
+			<section className="challenge-m">
 				<h2 ref={challengeTitleRef} className="challenge-reveal">
 					The Challenge
 				</h2>
 				<p ref={challengeTextRef} className="challenge-reveal">
-					The challenge with Nakama required a precise alignment of
-					design, technology, and user experience. Initially, we
-					analyzed Nakama's mockup, focusing on optimal website
-					integration and an enhanced user experience. Creating a
-					custom VueJS website, we meticulously mirrored Nakama's
-					vision, ensuring every detail was represented. User testing
-					was essential, leading to continuous refinements for a more
-					intuitive and responsive interaction.
+					The development of the Metaversus app presented intricate
+					hurdles demanding a seamless blend of design, technology,
+					and user immersion. At the outset, we delved deep into the
+					design blueprints, emphasizing perfect integration across
+					diverse devices and an unparalleled user journey. Sculpting
+					a bespoke website using advanced frameworks, we faithfully
+					echoed the essence of Metaversus, ensuring no nuance was
+					overlooked. Through rigorous user feedback sessions, we
+					persistently fine-tuned the platform, guaranteeing intuitive
+					and fluidic user interactions.
 				</p>
 				<img
 					ref={challengeImageRef}

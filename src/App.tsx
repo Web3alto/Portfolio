@@ -33,9 +33,9 @@ function App() {
 
 	useEffect(() => {
 		const lenis = new Lenis({
-			lerp: 0.05, // Adjust this value for smoother or less smooth scrolling
+			lerp: 0.05, 
 			orientation: "vertical",
-			smoothWheel: true, // Enable smooth scrolling for mouse wheel events
+			smoothWheel: true, 
 		});
 
 		const raf = (time: number) => {

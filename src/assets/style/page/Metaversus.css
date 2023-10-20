@@ -7,147 +7,149 @@
 	text-decoration: none;
 	list-style-type: none;
 }
-.kongu {
+.metaversus {
 	width: 60vw;
 	margin: 0 auto;
 	padding: 15vh 0 0 0;
 }
-.kongu h1 {
+.metaversus h1 {
 	position: relative;
-	font-size: 3.15vw;
+	font-size: 2.5vw;
 	font-family: "Inter", sans-serif;
 	font-weight: 800;
 }
-.kongu p {
-	font-size: 1.5vw;
+.metaversus p {
+	font-size: 1.4vw;
 	font-family: "Inter", sans-serif;
 	font-weight: 500;
 	padding: 3.5vh 0 4.5vh 0;
 	color: #0000007c;
 }
-.kongu .about p {
-	font-size: 1.5vw;
+.about-m p {
+	font-size: 1.4vw;
 	font-family: "Inter", sans-serif;
 	font-weight: 500;
 	padding: 3.5vh 0 4.5vh 0;
 	color: #0000007c;
 }
-.kongu .about {
+.about-m {
 	border-top: 1px solid #000000;
 	padding: 5vh 0 5vh 0;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 }
-.kongu .about p {
+.about-m p {
 	font-size: 1.15vw;
 	font-family: "Inter", sans-serif;
 	font-weight: 500;
 	color: #0000007c;
 }
-.kongu .client {
+.client-m {
 	display: flex;
 	align-items: flex-start;
 	justify-content: flex-start;
 	flex-direction: column;
 }
-.kongu .client .title,
-.kongu .role .title,
-.kongu .date .title {
+.client-m .title-m,
+.role-m .title-m,
+.date-m .title-m {
 	display: flex;
 	align-items: center;
 	justify-content: flex-start;
 }
-.kongu .client .title,
-.kongu .role .title,
-.kongu .date .title h2 {
+.client-m .title-m,
+.role-m .title-m,
+.date-m .title-m h2 {
 	font-size: 1.2vw;
 	font-family: "Inter", sans-serif;
 	font-weight: 500;
 }
-.kongu .client .title img,
-.kongu .role .title img,
-.kongu .date .title img {
+.client-m .title-m img,
+.role-m .title-m img,
+.date-m .title-m img {
 	width: 0.7vw;
 	margin: 0 0 0 0.5vw;
 }
-.kongu .about button {
+.about-m button {
 	padding: 0.75vw 2.5vw;
 	border: 1px solid black;
 	outline: none;
 	font-size: 1vw;
 	font-family: "Inter", sans-serif;
 	font-weight: 500;
-	transition: 0.5s ease;
+	transition: 0.25s ease;
 	margin-bottom: 5vh;
 	cursor: pointer;
 }
-
-.kongu .bg {
+.about-m button:hover {
+	transform: scale(1.05);
+}
+.bg-m {
 	width: 100%;
 	height: 65vh;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	background: #ece7e2;
+	background: none;
 }
-.kongu .bg img {
+.bg-m img {
 	width: 100%;
 }
-.kongu .bg video {
-	width: 80%;
+.bg-m video {
+	width: 100%;
 }
-.challenge {
+.challenge-m {
 	overflow-y: hidden;
 	width: 60vw;
 	margin: 0 auto;
 	padding: 10vh 0 0 0;
 }
-.challenge h2 {
+.challenge-m h2 {
 	position: relative;
-	font-size: 3.15vw;
+	font-size: 2vw;
 	font-family: "Inter", sans-serif;
 	font-weight: 500;
 }
-.challenge p {
-	margin: 5vh 0 2vh 0;
-	font-size: 1.5vw;
+.challenge-m p {
+	font-size: 1.4vw;
 	font-family: "Inter", sans-serif;
 	font-weight: 500;
+	padding: 3.5vh 0 4.5vh 0;
 	color: #0000007c;
 }
-.challenge img {
+.challenge-m img {
+	opacity: 0;
 	padding: 5vh 0;
 	width: 100%;
 }
-.challenge video {
-	opacity: 0;
+.challenge-m video {
 	width: 100%;
 	margin: 5vh 0 15vh 0;
 }
 /* ------------------------------------------------------------------------------------------------------------------------------------- */
-.slide-reveal-container,
-.slide-reveal {
+.slide-reveal-container-m,
+.slide-reveal-m {
 	overflow: hidden;
 }
 
-.slide-reveal {
+.slide-reveal-m {
 	display: inline-block;
 }
-.kongu h1,
-.kongu p,
-.client .title,
-.client p,
-.role .title,
-.role p,
-.date .title,
-.date p {
+.metaversus h1,
+.metaversus p,
+.client-m .title-m,
+.client-m p,
+.role-m .title-m,
+.role-m p,
+.date-m .title-m,
+.date-m p {
 	transform: translateY(100%);
 }
-.about button {
+.about-m button {
 	transform: translateY(200%);
 }
-@keyframes slideReveal {
+@keyframes slide-reveal-a {
 	to {
 		transform: translateY(0);
 	}
@@ -168,7 +170,7 @@
 	}
 }
 
-.bg {
+.bg-m img {
 	animation: fadeInSlideUp 3s ease forwards;
 }
 /* ------------------------------------------------------------------------------------------------------------------------------------- */
@@ -208,21 +210,22 @@
 }
 /* ------------------------------------------------------------------------------------------------------------------------------------- */
 @media screen and (max-width: 999px) {
-	.kongu {
+	.metaversus {
 		width: 80vw;
 	}
-	.kongu h1 {
+	.metaversus h1 {
 		font-size: 5vw;
 	}
-	.kongu p {
+
+	.metaversus p {
 		font-size: 3vw;
 		padding: 2vh 0 4.5vh 0;
 	}
-	.kongu .about p {
+	.about-m p {
 		font-size: 3vw;
 		padding: 2vh 0 4.5vh 0;
 	}
-	.kongu .about {
+	.about-m {
 		border-top: 1px solid #000000;
 		padding: 5vh 0 5vh 0;
 		display: flex;
@@ -230,23 +233,23 @@
 		justify-content: space-between;
 		flex-direction: column;
 	}
-	.kongu .about h2 {
+	.about-m h2 {
 		font-size: 3.5vw;
 	}
-	.kongu .client .title,
-	.kongu .role .title,
-	.kongu .date .title h2 {
+	.client-m .title-m,
+	.role-m .title-m,
+	.date-m .title-m h2 {
 		font-size: 3.5vw;
 		font-family: "Inter", sans-serif;
 		font-weight: 400;
 	}
-	.kongu .client .title img,
-	.kongu .role .title img,
-	.kongu .date .title img {
+	.client-m .title-m img,
+	.role-m .title-m img,
+	.date-m .title-m img {
 		width: 2vw;
 		margin: 0 0 0 2vw;
 	}
-	.kongu .about button {
+	.about-m button {
 		padding: 1.5vw 7.5vw;
 		border: 1px solid black;
 		outline: none;
@@ -257,77 +260,81 @@
 		margin-bottom: 2.5vh;
 		cursor: none;
 	}
-	.kongu .bg {
+	.bg-m {
 		width: 100%;
 		height: 30vh;
 		display: flex;
 		align-items: center;
 		justify-content: center;
 	}
-	.challenge {
+	.challenge-m {
 		width: 80vw;
 		padding: 5vh 0 0 0;
 	}
-	.challenge h2 {
+	.challenge-m h2 {
 		font-size: 3.5vw;
 	}
-	.challenge p {
+	.challenge-m p {
 		font-size: 3vw;
 	}
-	.challenge video {
+	.challenge-m video {
 		width: 100%;
-		margin: 5vh 0 15vh 0;
+		margin: 0 0 15vh 0;
 	}
-	.challenge img {
-		padding: 0;
-		margin: 5vh 0 15vh 0;
+	.challenge-m img {
+		padding: 0 0 10vh 0;
 		width: 100%;
 	}
 }
 
 @media screen and (max-width: 600px) {
-	.kongu {
+	.metaversus {
 		padding: 20vh 0 0 0;
 	}
-	.kongu h1 {
+	.metaversus h1 {
 		font-size: 7.5vw;
 		margin: 0 0 2vh 0;
 	}
-	.kongu p {
+	.metaversus p {
 		font-size: 5vw;
 		padding: 2vh 0 4.5vh 0;
 	}
-	.kongu .about p {
+	.about-m p {
 		font-size: 5vw;
 		padding: 2vh 0 4.5vh 0;
 	}
-	.kongu .about h2 {
+	.about-m h2 {
 		font-size: 4.5vw;
 	}
-	.kongu h2 {
+	.metaversus h2 {
 		font-size: 4.5vw;
 	}
-	.kongu .client .title,
-	.kongu .role .title,
-	.kongu .date .title h2 {
+	.client-m .title-m,
+	.role-m .title-m,
+	.date-m .title-m h2 {
 		font-size: 4.5vw;
 	}
-	.kongu .client .title img,
-	.kongu .role .title img,
-	.kongu .date .title img {
+	.client-m .title-m img,
+	.role-m .title-m img,
+	.date-m .title-m img {
 		width: 2.5vw;
 		margin: 0 0 0.25vh 2vw;
 	}
-	.kongu .about button {
+	.about-m button {
 		padding: 2vw 15vw;
 		font-size: 4.5vw;
 		margin-bottom: 2.5vh;
 	}
-	.challenge h2 {
+	.challenge-m h2 {
 		font-size: 7.5vw;
 		margin: 0 0 2vh 0;
 	}
-	.challenge p {
+	.challenge-m p {
 		font-size: 5vw;
+	}
+	.challenge-m img {
+		margin: 5vh 0 15vh 0;
+		padding: 0;
+		width: 100%;
 	}
 }

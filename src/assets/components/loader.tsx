@@ -10,12 +10,9 @@ const Loader: React.FC = () => {
 	const words = ["WELCOME", "TO", "MY", "PORTFOLIO"];
 
 	useEffect(() => {
-		// Change the word every 1 second
 		const wordTimer = setInterval(() => {
 			setCurrentWord((prevWord) => (prevWord + 1) % words.length);
 		}, 750);
-
-		// Hide the loader after 3 seconds
 		const visibleTimer = setTimeout(() => {
 			setVisible(false);
 		}, 3000);
@@ -28,7 +25,6 @@ const Loader: React.FC = () => {
 
 	useEffect(() => {
 		if (!visible) {
-			// Redirect to home page when the loader is done
 			navigate("/");
 		}
 	}, [visible, navigate]);

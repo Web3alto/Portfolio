@@ -170,7 +170,7 @@ h2 {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	width: 22.5vw;
+	width: 20vw;
 	height: 65vh;
 	margin: 0 1vw;
 	filter: grayscale(100%);
@@ -428,8 +428,6 @@ img[alt="arrowRight"] {
 	opacity: 1;
 	transform: translateY(0);
 }
-/* -----------TYPEWRITER-------------- */
-
 /* ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ */
 @media screen and (max-width: 999px) {
 	.intro {
@@ -468,7 +466,11 @@ img[alt="arrowRight"] {
 	}
 	.card {
 		width: 20vw;
-		height: 22.5vh;
+		height: 30vh;
+	}
+	.card:hover {
+		filter: grayscale(15%);
+		width: 20vw;
 	}
 	.approach .right {
 		border-left: 1px solid #000000;
@@ -559,7 +561,7 @@ img[alt="arrowRight"] {
 	}
 	.mobile-head h3 {
 		font-size: 7.5vw;
-		padding: 5vh 0 10vh 0;
+		padding: 5vh 0;
 		font-family: "Inter", sans-serif;
 		font-weight: 400;
 	}
@@ -587,13 +589,18 @@ img[alt="arrowRight"] {
 		margin: 0.35vh 0 0 2vw;
 	}
 	.card-container {
-		padding: 10vh 0 10vh 0;
+		padding: 5vh 0 5vh 0;
 		flex-direction: column;
 	}
 	.card {
-		margin: 10vw 0;
+		margin: 2.5vw 0;
 		width: 80vw;
-		height: 33vh;
+		height: 22.5vh;
+	}
+	.card:hover {
+		filter: grayscale(15%);
+		width: 80vw;
+		height: 22.5vh;
 	}
 	.approach {
 		flex-direction: column;
